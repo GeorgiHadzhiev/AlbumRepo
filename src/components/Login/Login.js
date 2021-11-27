@@ -1,4 +1,4 @@
-export default function Contact(){
+export default function Register(){
 
     return(
 
@@ -9,7 +9,7 @@ export default function Contact(){
                     <div class="row">
                         <div class="col-md-12">
                             <div class="contacttitlepage">
-                                <h2>contact</h2>
+                                <h2>login</h2>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ export default function Contact(){
                                         <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
                                     </div>
                                     <div class="col-sm-12">
-                                        <button class="send">Send</button>
+                                        <button class="send">login</button>
                                     </div>
                                 </div>
                             </form>
