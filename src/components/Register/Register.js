@@ -36,12 +36,18 @@ export default function Register(){
                                         <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
                                     </div>
                                     <div class="col-sm-12">
-                                        <button class="send">Send</button>
+                                        <button class="send">Register</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div class="container">
+                    <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
                 </div>
             </div>
 

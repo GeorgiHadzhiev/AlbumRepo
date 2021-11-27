@@ -2,7 +2,7 @@ export default function Register(){
 
     return(
 
-        <>
+        <body class="main-layout contact-page">
 
             <div class="contactbg">
                 <div class="container">
@@ -36,7 +36,7 @@ export default function Register(){
                                         <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
                                     </div>
                                     <div class="col-sm-12">
-                                        <button class="send">login</button>
+                                        <button class="send">Login</button>
                                     </div>
                                 </div>
                             </form>
@@ -45,7 +45,13 @@ export default function Register(){
                 </div>
             </div>
 
-        </>
+            <div class="copyright">
+                <div class="container">
+                    <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
+                </div>
+            </div>
+
+        </body>
 
     )
 

@@ -4,6 +4,7 @@ import MusicBox from '../MusicBox'
 import LatestNews from '../LatestNews'
 import AlbumsPromo from '../AlbumsPromo'
 import NewsLetter from '../NewsLetter'
+import Footer from '../Footer'
 
 
 export default function Home(){
@@ -12,11 +13,12 @@ export default function Home(){
         <>
 
             <Banner />
-            <ContainerFluid />
             <MusicBox />
+            <ContainerFluid />
             <LatestNews />
             <AlbumsPromo />
             <NewsLetter />
+            <Footer />
         
         </>
 
