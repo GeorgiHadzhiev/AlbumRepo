@@ -34,7 +34,7 @@ export default function Header(){
                         <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
                             <form class="search">
                                 <input class="form-control" type="text" placeholder="Search" />
-                                <button><img src="images/search_icon.png" /></button>
+                                <button><img src="images/search_icon.png" alt="../../public/images/brokenImage.png" /></button>
                             </form>
                         </div>
                     </div>

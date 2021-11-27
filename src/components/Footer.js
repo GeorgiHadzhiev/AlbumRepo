@@ -53,16 +53,16 @@ export default function Footer(){
                                 <h3>New Music </h3>
                                 <div class="row">
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
-                                        <figure><img src="images/music1.jpg" /></figure>
+                                        <figure><img src="images/music1.jpg" alt="../../public/images/brokenImage.png" /></figure>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
-                                        <figure><img src="images/music2.jpg" /></figure>
+                                        <figure><img src="images/music2.jpg" alt="../../public/images/brokenImage.png" /></figure>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
-                                        <figure><img src="images/music3.jpg" /></figure>
+                                        <figure><img src="images/music3.jpg" alt="../../public/images/brokenImage.png" /></figure>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
-                                        <figure><img src="images/music4.jpg" /></figure>
+                                        <figure><img src="images/music4.jpg" alt="../../public/images/brokenImage.png" /></figure>
                                     </div>
                                 </div>
 
