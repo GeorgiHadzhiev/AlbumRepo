@@ -4,7 +4,6 @@ import MusicBox from '../MusicBox'
 import LatestNews from '../LatestNews'
 import Albums from '../Albums'
 import NewsLetter from '../NewsLetter'
-import Footer from '../Footer'
 
 
 export default function Home(){
@@ -18,8 +17,7 @@ export default function Home(){
             <LatestNews />
             <Albums />
             <NewsLetter />
-            <Footer />
-
+        
         </>
 
     )

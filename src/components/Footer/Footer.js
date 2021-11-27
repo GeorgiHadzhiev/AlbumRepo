@@ -2,7 +2,7 @@ export default function Footer(){
 
     return(
 
-        <footr id="footer_with_contact">
+        <footer id="footer_with_contact">
             <div class="footer">
                 <div class="container">
                     <div class="row">
@@ -74,7 +74,9 @@ export default function Footer(){
                     <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
                 </div>
             </div>
-        </footr>
+        </footer>
+
+        
 
     )
 
