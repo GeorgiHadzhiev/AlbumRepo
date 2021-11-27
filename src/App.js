@@ -7,6 +7,7 @@ import About from './components/About'
 import Blog from './components/Blog';
 import Albums from './components/Albums'
 import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   
@@ -26,7 +27,7 @@ function App() {
         <Route path="/albums" element={<Albums />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<About />} />
+        <Route path="/register" element={<Register />} />
         
 
 
