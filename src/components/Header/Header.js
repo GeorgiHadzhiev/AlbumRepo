@@ -12,7 +12,7 @@ export default function Header(){
                             <div class="full">
                                 <div class="center-desk">
                                     <div class="logo">
-                                        <a href="index.html"><img src="images/logo.jpg" alt="logo" /></a>
+                                        <Link to="/"><img src="images/logo.jpg" alt="logo" /></Link>
                                     </div>
                                 </div>
                             </div>
