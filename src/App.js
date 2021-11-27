@@ -1,11 +1,11 @@
-import Header from './components/Header.js'
-import Banner from './components/Banner.js';
-import ContainerFluid from './components/ContainerFluid.js'
-import MusicBox from './components/MusicBox.js'
-import LatestNews from './components/LatestNews.js'
-import Albums from './components/Albums.js'
-import Newsletter from './components/Newsletter.js'
-import Footer from './components/Footer.js'
+import Header from './components/Header/Header.js'
+import Banner from './components/Banner/Banner.js';
+import ContainerFluid from './components/ContainerFluid/ContainerFluid.js'
+import MusicBox from './components/MusicBox/MusicBox.js'
+import LatestNews from './components/LatestNews/LatestNews.js'
+import Albums from './components/Albums/Albums.js'
+import Newsletter from './components/NewsLetter/Newsletter.js'
+import Footer from './components/Footer/Footer.js'
 
 
 function App() {
