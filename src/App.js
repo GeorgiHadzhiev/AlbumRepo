@@ -10,8 +10,8 @@ function App() {
   return (
     <div className="App">
     
-      <div class="loader_bg">
-        <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+      <div className="loader_bg">
+        <div className="loader"><img src="images/loading.gif" alt="#" /></div>
       </div>
 
       <Header />

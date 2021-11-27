@@ -3,20 +3,20 @@ export default function Footer(){
     return(
 
         <footer id="footer_with_contact">
-            <div class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-12 width">
-                            <div class="address">
+            <div className="footer">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-3 col-md-6 col-sm-12 width">
+                            <div className="address">
                                 <h3>Contact Us</h3>
-                                <ul class="locarion_icon">
+                                <ul className="locarion_icon">
                                     <li><img src="icon/1.png" alt="icon" />104 New York , USA</li>
                                     <li><img src="icon/2.png" alt="icon" />Phone : ( +71 5896547 )</li>
                                     <li><img src="icon/3.png" alt="icon" />Email : demo@email.com</li>
 
                                 </ul>
 
-                                <ul class="contant_icon">
+                                <ul className="contant_icon">
                                     <li><img src="icon/fb.png" alt="icon" /></li>
                                     <li><img src="icon/tw.png" alt="icon" /></li>
                                     <li><img src="icon/lin(2).png" alt="icon" /></li>
@@ -24,44 +24,44 @@ export default function Footer(){
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 width">
-                            <div class="address">
+                        <div className="col-lg-6 col-md-6 col-sm-12 width">
+                            <div className="address">
                                 <h3>Get In Touch</h3>
                                 <form>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <input class="contactus" placeholder="Name" type="text" name="Name" />
+                                    <div className="row">
+                                        <div className="col-sm-12">
+                                            <input className="contactus" placeholder="Name" type="text" name="Name" />
                                         </div>
-                                        <div class="col-sm-12">
-                                            <input class="contactus" placeholder="Phone" type="text" name="Email" />
+                                        <div className="col-sm-12">
+                                            <input className="contactus" placeholder="Phone" type="text" name="Email" />
                                         </div>
-                                        <div class="col-sm-12">
-                                            <input class="contactus" placeholder="Email" type="text" name="Email" />
+                                        <div className="col-sm-12">
+                                            <input className="contactus" placeholder="Email" type="text" name="Email" />
                                         </div>
-                                        <div class="col-sm-12">
-                                            <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                                        <div className="col-sm-12">
+                                            <textarea className="textarea" placeholder="Message" type="text" name="Message"></textarea>
                                         </div>
-                                        <div class="col-sm-12">
-                                            <button class="send">Send</button>
+                                        <div className="col-sm-12">
+                                            <button className="send">Send</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 width">
-                            <div class="address">
+                        <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12 width">
+                            <div className="address">
                                 <h3>New Music </h3>
-                                <div class="row">
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+                                <div className="row">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
                                         <figure><img src="images/music1.jpg" alt="../../public/images/brokenImage.png" /></figure>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
                                         <figure><img src="images/music2.jpg" alt="../../public/images/brokenImage.png" /></figure>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
                                         <figure><img src="images/music3.jpg" alt="../../public/images/brokenImage.png" /></figure>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 ">
                                         <figure><img src="images/music4.jpg" alt="../../public/images/brokenImage.png" /></figure>
                                     </div>
                                 </div>
@@ -70,7 +70,7 @@ export default function Footer(){
                         </div>
                     </div>
                 </div>
-                <div class="copyright">
+                <div className="copyright">
                     <p>© 2019 All Rights Reserved. <a href="https://html.design/">Free html Templates</a></p>
                 </div>
             </div>
