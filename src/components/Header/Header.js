@@ -25,7 +25,7 @@ export default function Header(){
                                             <li class="active"> <Link to="/">Home</Link> </li>
                                             <li> <Link to="/about">about</Link> </li>
                                             <li> <Link to="/albums"> Albums</Link> </li>
-                                            <li> <a href="blog.html">Blog</a> </li>
+                                            <li> <Link to="/blog">Blog</Link> </li>
                                             <li> <a href="contact.html">Contact</a> </li>
                                             <li> <a href="#contact">Login</a> </li>
                                         </ul>
