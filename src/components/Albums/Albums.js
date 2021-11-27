@@ -33,10 +33,10 @@ export default function Albums(){
                         <div class="Albums-box">
                             <figure>
                                 <a href="images/album1.jpg" class="fancybox" rel="ligthbox">
-                                    <img src="images/album1.jpg" class="zoom img-fluid " alt="" />
+                                    <img src="images/album1.jpg" class="zoom img-fluid " alt="../../public/images/brokenImage.png" />
                                 </a>
                                 <span class="hoverle">
-                            <a href="images/album1.jpg" class="fancybox" rel="ligthbox"><img src="images/search.png" /></a>
+                            <a href="images/album1.jpg" class="fancybox" rel="ligthbox"><img src="images/search.png" alt="../../public/images/brokenImage.png" /></a>
                             </span>
                             </figure>
                         </div>
@@ -48,7 +48,7 @@ export default function Albums(){
                                     <img src="images/album2.jpg" class="zoom img-fluid " alt="" />
                                 </a>
                                 <span class="hoverle">
-                            <a href="images/album2.jpg" class="fancybox" rel="ligthbox"><img src="images/search.png" /></a>
+                            <a href="images/album2.jpg" class="fancybox" rel="ligthbox"><img src="images/search.png" alt="../../public/images/brokenImage.png" /></a>
                             </span>
                             </figure>
                         </div>
@@ -60,7 +60,7 @@ export default function Albums(){
                                     <img src="images/album2.jpg" class="zoom img-fluid " alt="" />
                                 </a>
                                 <span class="hoverle">
-                            <a href="images/album2.jpg" class="fancybox" rel="ligthbox"><img src="images/search.png" /></a>
+                            <a href="images/album2.jpg" class="fancybox" rel="ligthbox"><img src="images/search.png" alt="../../public/images/brokenImage.png" /></a>
                             </span>
                             </figure>
                         </div>
@@ -72,7 +72,7 @@ export default function Albums(){
                                     <img src="images/album1.jpg" class="zoom img-fluid " alt="" />
                                 </a>
                                 <span class="hoverle">
-                            <a href="images/album1.jpg" class="fancybox" rel="ligthbox"><img src="images/search.png" /> /</a>
+                            <a href="images/album1.jpg" class="fancybox" rel="ligthbox"><img src="images/search.png" alt="../../public/images/brokenImage.png" /> /</a>
                             </span>
                             </figure>
                         </div>
@@ -84,7 +84,7 @@ export default function Albums(){
                                     <img src="images/album1.jpg" class="zoom img-fluid " alt="" />
                                 </a>
                                 <span class="hoverle">
-                            <a href="images/album1.jpg" class="fancybox" rel="ligthbox"><img src="images/search.png" /></a>
+                            <a href="images/album1.jpg" class="fancybox" rel="ligthbox"><img src="images/search.png" alt="../../public/images/brokenImage.png" /></a>
                             </span>
                             </figure>
                         </div>
@@ -96,7 +96,7 @@ export default function Albums(){
                                     <img src="images/album2.jpg" class="zoom img-fluid " alt="" />
                                 </a>
                                 <span class="hoverle">
-                            <a href="images/album2.jpg" class="fancybox" rel="ligthbox"><img src="images/search.png" /></a>
+                            <a href="images/album2.jpg" class="fancybox" rel="ligthbox"><img src="images/search.png" alt="../../public/images/brokenImage.png" /></a>
                             </span>
                             </figure>
                         </div>
