@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom'
+
 export default function Header(){
 
     return(
@@ -20,8 +22,8 @@ export default function Header(){
                                 <div class="limit-box">
                                     <nav class="main-menu">
                                         <ul class="menu-area-main">
-                                            <li class="active"> <a href="index.html">Home</a> </li>
-                                            <li> <a href="about.html">about</a> </li>
+                                            <li class="active"> <Link to="/">Home</Link> </li>
+                                            <li> <Link to="/about">about</Link> </li>
                                             <li> <a href="album.html"> Albums</a> </li>
                                             <li> <a href="blog.html">Blog</a> </li>
                                             <li> <a href="contact.html">Contact</a> </li>
