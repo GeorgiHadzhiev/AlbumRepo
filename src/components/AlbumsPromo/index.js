@@ -1,0 +1,1 @@
+export {default} from './AlbumsPromo.js';

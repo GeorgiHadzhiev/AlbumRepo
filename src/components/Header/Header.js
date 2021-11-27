@@ -24,7 +24,7 @@ export default function Header(){
                                         <ul class="menu-area-main">
                                             <li class="active"> <Link to="/">Home</Link> </li>
                                             <li> <Link to="/about">about</Link> </li>
-                                            <li> <a href="album.html"> Albums</a> </li>
+                                            <li> <Link to="/albums"> Albums</Link> </li>
                                             <li> <a href="blog.html">Blog</a> </li>
                                             <li> <a href="contact.html">Contact</a> </li>
                                             <li> <a href="#contact">Login</a> </li>
