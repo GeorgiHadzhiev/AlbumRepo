@@ -4,3 +4,28 @@
     color: white;
 
 }
+.cardTitle{
+
+    font-weight: bold;
+    font-size: 70px;
+
+}
+.cardBody{
+
+    font-weight: normal;
+    background-color: #f70606ab;
+    padding: 0px 20px;
+    font-size: 51px;
+
+}
+.cardFooter{
+
+    font-size: 70px;
+    font-weight: bold;
+
+}
+.cardOverlay{
+
+    padding: 0px 390px;
+
+}

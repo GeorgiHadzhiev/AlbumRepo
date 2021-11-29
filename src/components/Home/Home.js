@@ -13,12 +13,12 @@ export default function Home(){
 
                 <Card className={styles.homeBanner} >
                     <Card.Img src="/images/banner2.jpg" alt="Card image" />
-                    <Card.ImgOverlay>
-                        <Card.Title style={{fontWeight: "bold"}}>Card title</Card.Title>
-                        <Card.Text style={{fontSize: '70px'}}>
-                        The Perfect Music.
+                    <Card.ImgOverlay className={styles.cardOverlay}>
+                        <Card.Title className={styles.cardTitle}>Welcome</Card.Title>
+                        <Card.Text className={styles.cardBody}>
+                        To The AlbumRepo
                         </Card.Text>
-                        <Card.Text>Last updated 3 mins ago</Card.Text>
+                        <Card.Text className={styles.cardFooter}>The best musical repository</Card.Text>
                     </Card.ImgOverlay>
                 </Card>
 
