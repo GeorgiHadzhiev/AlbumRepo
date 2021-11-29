@@ -10,8 +10,9 @@ export default function Main(){
 
     return(
         <>
+            <Header />
+            
             <AnimatePresence>
-            <Header key={'Header'} />
 
 
                 <Routes>
