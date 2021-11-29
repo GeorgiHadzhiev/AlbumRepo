@@ -4,44 +4,46 @@ export default function Header(){
 
     return(
 
-        <header>
-            <div class="header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col logo_section">
-                            <div class="full">
-                                <div class="center-desk">
-                                    <div class="logo">
-                                        <Link to="/"><img src="images/logo.jpg" alt="logo" /></Link>
-                                    </div>
-                                </div>
-                            </div>
+        <header class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsWow" aria-controls="navbarsWow" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="container">
+                
+                <a class="navbar-brand" href="index.html">
+                <img src="./images/logo.png" alt="Affiliates - Free Bootstrap Template" />
+                </a>
+        
+                
+                <div class="collapse navbar-collapse" id="navbarsWow">
+                    
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Post</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="single.html">Left Sidebar</a>
+                            <a class="dropdown-item" href="single-sidebar-right.html">Right Sidebar</a>
                         </div>
-                        <div class="col-xl-8 col-lg-8 col-md-10 col-sm-10">
-                            <div class="menu-area">
-                                <div class="limit-box">
-                                    <nav class="main-menu">
-                                        <ul class="menu-area-main">
-                                            <li class="active"> <Link to="/">Home</Link> </li>
-                                            <li> <Link to="/about">about</Link> </li>
-                                            <li> <Link to="/albums"> Albums</Link> </li>
-                                            <li> <Link to="/blog">Blog</Link> </li>
-                                            <li> <Link to="/login">Login</Link> </li>
-                                            <li> <Link to="/register">Register</Link> </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
-                            <form class="search">
-                                <input class="form-control" type="text" placeholder="Search" />
-                                <button><img src="images/search_icon.png" alt="../../public/images/brokenImage.png" /></button>
-                            </form>
-                        </div>
-                    </div>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="category.html">Category</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                        <a target="_blank" class="nav-link highlight" href="https://gum.co/affiliates-html-template">Download</a>
+                        </li>
+                    </ul>
+                    
                 </div>
-                </div>
+            </div>
         </header>
 
     )
