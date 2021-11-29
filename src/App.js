@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes,Route } from 'react-router-dom';
 
 import Header from './components/Header'
+import Home from './components/Home'
 
 function App() {
   return (
@@ -9,11 +10,11 @@ function App() {
 
       <Header />
 
-      {/* <Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+       
 
-        <Route path='/' element={} />
-
-      </Routes> */}
+      </Routes>
 
     </div>
   );
