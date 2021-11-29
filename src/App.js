@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState,useEffect } from 'react';
+import { AnimatePresence,motion } from 'framer-motion';
 
 import Main from './components/Main/Main.js';
 import Loader from './components/Loader'
