@@ -6,9 +6,9 @@ export default function Header(){
 
         <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">AlbumRepo</Navbar.Brand>
+                <Navbar.Brand href="/">AlbumRepo</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
+                    <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/login">Login</Nav.Link>
                     <Nav.Link href="#pricing">Register</Nav.Link>
                 </Nav>
