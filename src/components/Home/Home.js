@@ -9,19 +9,5 @@ import Footer from '../Footer'
 
 export default function Home(){
 
-    return(
-        <>
-
-            <Banner />
-            <MusicBox />
-            <ContainerFluid />
-            <LatestNews />
-            <AlbumsPromo />
-            <NewsLetter />
-            <Footer />
-        
-        </>
-
-    )
-
+ 
 }
