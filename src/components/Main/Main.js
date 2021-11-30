@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import Header from '../Header';
 import Home from '../Home';
 import Login from '../Login';
+import Footer from '../Footer';
 
 
 export default function Main(){
@@ -22,6 +23,7 @@ export default function Main(){
         
                 </Routes>
             
+            <Footer />
 
             </AnimatePresence>
             

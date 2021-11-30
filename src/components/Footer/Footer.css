@@ -1,0 +1,14 @@
+.copyright {
+    background-color: #0B0808;
+    padding: 20px 0px;
+    margin-top: 90px;
+}
+.copyright p {
+    color: white;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+.copyright a:hover {
+    color: #f70e0e 
+}
