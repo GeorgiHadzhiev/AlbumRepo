@@ -1,14 +1,10 @@
 import {Navbar,Container,Nav} from 'react-bootstrap'
-import { motion } from 'framer-motion';
 
 export default function Header(){
 
     return(
 
-        <motion.div
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            exit={{opacity:0}}>
+        <div>
 
             <Navbar bg="dark" variant="dark">
                 <Container>
@@ -21,7 +17,7 @@ export default function Header(){
                 </Container>
             </Navbar>
 
-        </motion.div>
+        </div>
 
     )
 
