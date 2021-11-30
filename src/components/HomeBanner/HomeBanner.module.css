@@ -30,3 +30,9 @@
     padding: 0px 390px;
 
 }
+.cardImage{
+
+    height: 500px; 
+    object-fit: cover;
+
+}

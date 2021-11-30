@@ -12,7 +12,7 @@ export default function HomeBanner(){
     <motion.div initial="out" animate="in" exit="out" variants={pageTransition} >
 
         <Card className={styles.homeBanner} >
-            <Card.Img src="/images/vinyl wallpaper.jpg" alt="Card image" />
+            <Card.Img src="/images/vinyl wallpaper.jpg" alt="Card image" className={styles.cardImage} />
             <Card.ImgOverlay className={styles.cardOverlay}>
                 <Card.Title className={styles.cardTitle}>Welcome</Card.Title>
                 <Card.Text className={styles.cardBody}>
