@@ -23,9 +23,9 @@ export default function Main(){
         
                 </Routes>
             
-            <Footer />
 
             </AnimatePresence>
+            <Footer />
             
         </>
 

@@ -1,24 +1,27 @@
-import {Navbar,Container,Nav} from 'react-bootstrap'
-import styles from './Header.module.css'
+import { Link } from 'react-router-dom'
+import './Header.css'
 
 export default function Header(){
 
     return(
 
-        <div>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div className="container-fluid">
+                <Link className="navbar-brand" to="/">AlbumRepo</Link>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li className="nav-item">
+                        <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link login" to="/login">Login</Link>
+                        <Link className="nav-link register" to="/register">Register</Link>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
 
-            <Navbar bg="dark" variant="dark">
-                <Container>
-                    <Navbar.Brand href="/">AlbumRepo</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/login" className={styles.login}>Login</Nav.Link>
-                        <Nav.Link href="/register" className={styles.register}>Register</Nav.Link>
-                    </Nav>
-                </Container>
-            </Navbar>
-
-        </div>
 
     )
 
