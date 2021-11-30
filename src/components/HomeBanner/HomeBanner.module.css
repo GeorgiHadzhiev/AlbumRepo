@@ -7,13 +7,13 @@
 
     font-weight: bold;
     font-size: 70px;
-    color: white;
+    color:rgba(128, 128, 128, 0.849)
 
 }
 .cardBody{
 
     font-weight: 900;
-    color: rgba(145, 31, 31, 0.685);
+    color: rgba(145, 31, 31, 0.822);
     padding: 0px 20px;
     font-size: 91px;
 
@@ -22,8 +22,7 @@
 
     font-size: 70px;
     font-weight: bold;
-    color:rgba(91, 4, 173, 0.849)
-
+    color:black;
 }
 .cardOverlay{
 
@@ -32,7 +31,7 @@
 }
 .cardImage{
 
-    height: 500px; 
+    height: 464px; 
     object-fit: cover;
 
 }
