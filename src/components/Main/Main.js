@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import Header from '../Header';
 import Home from '../Home';
 import Login from '../Login';
+import Register from '../Register';
 import Footer from '../Footer';
 
 
@@ -19,6 +20,7 @@ export default function Main(){
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
                 
         
                 </Routes>
