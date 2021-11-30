@@ -26,7 +26,7 @@ function App() {
 
         !isLoading 
         ?<Loader />
-        : isLoading
+        :isLoading
 
       }
       </>
