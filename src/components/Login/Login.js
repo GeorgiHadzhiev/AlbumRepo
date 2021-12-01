@@ -12,17 +12,17 @@ export default function Login(){
           </div>
           <div className="offcanvas-body">
               <div>
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                        <label for="floatingInput">Email address</label>
+                    <div className="form-floating mb-3">
+                        <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" />
+                        <label htmlFor="floatingInput">Email address</label>
                     </div>
-                    <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
-                        <label for="floatingPassword">Password</label>
+                    <div className="form-floating">
+                        <input type="password" className="form-control" id="floatingPassword" placeholder="Password" />
+                        <label htmlFor="floatingPassword">Password</label>
                     </div>
               </div>
               <div className="dropdown mt-3">
-              <button type="button" class="btn btn-success">Login</button>
+              <button type="button" className="btn btn-success">Login</button>
               </div>
               <Link to="/register">Don't have an account?<br/>Click here to Register</Link>
           </div>
