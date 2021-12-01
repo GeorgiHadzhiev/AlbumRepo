@@ -8,6 +8,13 @@ import Loader from './components/Loader'
 function App() {
 
   const [isLoading,setIsLoading] = useState("")
+  const [user,setUser] = useState({
+
+    _id: '',
+    email: '',
+    accessToken: '',
+
+  })
 
   useEffect(() => {
     
@@ -17,11 +24,23 @@ function App() {
     
   },[])
 
+  const login = (data) => {
+
+    setUser(data)
+
+  }
+
+  const logout = () =>{
+
+    
+
+  }
+
 
   return (
     <div className="App">
       
-      <AuthContext.Provider>
+      <AuthContext.Provider value={{user,login}}>
       {
 
         !isLoading 

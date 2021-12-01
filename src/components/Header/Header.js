@@ -1,14 +1,38 @@
 import { Link } from 'react-router-dom'
+
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext.js';
 import './Header.css'
 import Login from '../Login'
 
 export default function Header(){
 
-    const onLogin = () => {
+    const {user} = useContext(AuthContext)
 
-        
+    let guestNavigation = (
+    
+        <div id="guest">
 
-    }
+            <button className="btn btn-primary login" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                Sign in/up
+            </button>
+
+        </div>
+
+    )
+
+    let userNavigation = (
+
+        <div id="userNav">
+
+            <a>Welcome, {user.email}</a>
+            {/* <Link className="button" to="/my-pets">My Pets</Link>
+            <Link className="button" to="/create">Add Pet</Link>
+            <Link className="button" to="/logout">Logout</Link> */}
+
+        </div>
+
+    )
 
     return(
 
@@ -24,9 +48,12 @@ export default function Header(){
                     </li>
                     <li className="nav-item">
 
-                        <button className="btn btn-primary login" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                            Sign in/up
-                        </button>
+                        {user.email
+
+                            ?userNavigation
+                            :guestNavigation
+
+                        } 
 
                     </li>
                 </ul>

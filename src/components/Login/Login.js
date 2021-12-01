@@ -1,31 +1,34 @@
 import { Link,useNavigate } from 'react-router-dom'
 import styles from './Login.module.css'
 
+import { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthContext.js';
 import authService from '../../services/authService.js'
 
-export default function Login({onLogin}){
+export default function Login(){
 
+    const {login} = useContext(AuthContext);
     const navigate = useNavigate();
 
     const onLoginHandler = (e) =>{
 
-        e.preventDefault()
+        e.preventDefault();
 
         let formData = new FormData(e.currentTarget)
 
-        let email = formData.get('email')
-        let password = formData.get('password')
+        let email = formData.get('email');
+        let password = formData.get('password');
 
         authService.login(email,password)
         .then(res => {
 
-            onLogin(res)
-            navigate('/')
+            login(res);
+            navigate('/register');
 
         })
         .catch(err =>{
 
-            console.log(err)
+            console.log(err);
 
         })
 

@@ -27,9 +27,17 @@ async function login(email,password){
 
 }
 
+async function logout(){
+
+    fetch(`${baseUrl}/users/logout`)
+    .then()
+
+}
+
 const authService = {
 
     login,
+    logout,
 
 }
 
