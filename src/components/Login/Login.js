@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import styles from './Login.module.css'
 
+import authService from '../../services/authService.js'
+
 export default function Login(){
 
     const onLogin = (e) =>{
@@ -11,8 +13,16 @@ export default function Login(){
 
         let email = formData.get('email')
         let password = formData.get('password')
-        console.log(email)
-        console.log(password)
+
+        authService.login(email,password)
+        .then(res => {
+
+            console.log(res)
+
+        })
+
+
+  
 
 
     }
