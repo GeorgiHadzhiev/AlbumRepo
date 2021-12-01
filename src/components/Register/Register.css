@@ -1,4 +1,4 @@
-/* .contactbg {
+.contactbg {
     background-color: #ff1e00b7;
     margin-bottom: 90px;
 }
@@ -30,7 +30,7 @@
 .col-sm-12 {
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
-    /* max-width: 100%; */
+    max-width: 100%;
 }
 .contact-page .send {
     background: #000;
@@ -53,4 +53,4 @@
     background-color: #f70e0e;
     border: #f70e0e solid 1px;
     color: #fff;
-} */
+} 
