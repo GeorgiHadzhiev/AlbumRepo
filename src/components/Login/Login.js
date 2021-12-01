@@ -23,7 +23,7 @@ export default function Login(){
         .then(res => {
 
             login(res);
-            navigate('/register');
+            navigate('/');
 
         })
         .catch(err =>{
@@ -57,7 +57,7 @@ export default function Login(){
                         </div>
                 </div>
                 <div className="dropdown mt-3">
-                    <input type="submit" className="btn btn-success" value="Login" />
+                    <input type="submit" className="btn btn-success" value="Login" data-bs-dismiss="offcanvas" aria-label="Close" />
                 </div>
             </div>
 
