@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState,useEffect } from 'react';
 
-
+import {AuthContext} from './contexts/AuthContext.js'
 import Main from './components/Main/Main.js';
 import Loader from './components/Loader'
 
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       
-      <>
+      <AuthContext.Provider>
       {
 
         !isLoading 
@@ -29,7 +29,7 @@ function App() {
         :isLoading
 
       }
-      </>
+      </AuthContext.Provider>
 
     </div>
   );

@@ -1,11 +1,13 @@
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import styles from './Login.module.css'
 
 import authService from '../../services/authService.js'
 
-export default function Login(){
+export default function Login({onLogin}){
 
-    const onLogin = (e) =>{
+    const navigate = useNavigate();
+
+    const onLoginHandler = (e) =>{
 
         e.preventDefault()
 
@@ -17,13 +19,15 @@ export default function Login(){
         authService.login(email,password)
         .then(res => {
 
-            console.log(res)
+            onLogin(res)
+            navigate('/')
 
         })
+        .catch(err =>{
 
+            console.log(err)
 
-  
-
+        })
 
     }
 
@@ -36,7 +40,7 @@ export default function Login(){
           </div>
 
 
-          <form id="loginForm" onSubmit={onLogin}>
+          <form id="loginForm" onSubmit={onLoginHandler}>
 
             <div className="offcanvas-body">
                 <div>

@@ -9,6 +9,7 @@ import Footer from '../Footer';
 
 export default function Main(){
 
+
     return(
         <>
             <Header />
