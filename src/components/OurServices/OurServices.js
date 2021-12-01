@@ -1,40 +1,34 @@
-import './OurServices.css'
+import styles  from './OurServices.module.css'
 
 export default function OurServices(){
 
     return(
 
-        <div className="music-box">
-            <div className="container">
-                <div className="row">
-                    <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                        <div className="for-box">
-                            <i><img src="icons/icon1.png" alt="icon"/></i>
-                            <h3>Custom Player</h3>
-                            <p>t is a long established fact that a reader will be distracted by the readable </p>
+        <div className={styles.musicBox}>
+            <div className={styles.container}>
+                <div className={styles.row}>
+                    <div className={styles.serviceBox}>
+                        <div className={styles.forBox}>
+                            <i><img src="icons/icon1.png" alt="icon" className={styles.servicePic}/></i>
+                            <h3 className={styles.serviceTitle}>Custom Player</h3>
+                            <p className={styles.serviceText}>t is a long established fact that a reader will be distracted by the readable </p>
                         </div>
                     </div>
-                    <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                        <div className="for-box">
-                            <i><img src="icons/icon2.png" alt="icon"/></i>
-                            <h3>Easy customize</h3>
-                            <p>t is a long established fact that a reader will be distracted by the readable </p>
+                    <div className={styles.serviceBox}>
+                        <div className={styles.forBox}>
+                            <i><img src="icons/icon1.png" alt="icon" className={styles.servicePic}/></i>
+                            <h3 className={styles.serviceTitle}>Custom Player</h3>
+                            <p className={styles.serviceText}>t is a long established fact that a reader will be distracted by the readable </p>
                         </div>
                     </div>
-                    <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                        <div className="for-box">
-                            <i><img src="icons/icon3.png" alt="icon"/></i>
-                            <h3>Music Playlist</h3>
-                            <p>t is a long established fact that a reader will be distracted by the readable </p>
+                    <div className={styles.serviceBox}>
+                        <div className={styles.forBox}>
+                            <i><img src="icons/icon1.png" alt="icon" className={styles.servicePic}/></i>
+                            <h3 className={styles.serviceTitle}>Custom Player</h3>
+                            <p className={styles.serviceText}>t is a long established fact that a reader will be distracted by the readable </p>
                         </div>
                     </div>
-                    <div className="col-xl-3 col-lg-3 col-md-6 col-sm-12">
-                        <div className="for-box">
-                            <i><img src="icons/icon4.png" alt="icon"/></i>
-                            <h3>Custom Gallery</h3>
-                            <p>t is a long established fact that a reader will be distracted by the readable </p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>

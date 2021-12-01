@@ -1,4 +1,4 @@
-import './Register.css'
+// import './Register.css'
 
 export default function Register(){
 

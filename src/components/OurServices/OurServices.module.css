@@ -1,0 +1,51 @@
+.musicBox {
+    padding: 90px 0px;
+    background: #fff;
+
+
+}
+.container {
+    max-width: 1140px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.serviceBox{
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.forBox {
+    padding: 0px 20px;
+}
+.servicePic{
+    max-width: 100%;
+    height: auto;
+}
+.serviceTitle {
+    padding-top: 28px;
+    font-size: 20px;
+    line-height: 25px;
+    color: #030000;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.serviceText{
+    font-size: 16px;
+    line-height: 22px;
+    color: #030000;
+    margin: 0px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 24px;
+}
