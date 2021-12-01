@@ -30,10 +30,7 @@ export default function Register(){
                                     <input className="contactus" placeholder="Password" type="text" name="Email" />
                                 </div>
                                 <div className="col-sm-12">
-                                    <input className="contactus" placeholder="Email" type="text" name="Email" />
-                                </div>
-                                <div className="col-sm-12">
-                                    <textarea className="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                                    <input className="contactus" placeholder="Repeat Password" type="text" name="Repeat Password" />
                                 </div>
                                 <div className="col-sm-12">
                                     <button className="send">Send</button>
