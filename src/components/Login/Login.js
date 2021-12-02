@@ -1,6 +1,6 @@
-import { Link,useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import './Login.css'
-// import bootstrap from 'bootstrap'
+import 'bootstrap/dist/js/bootstrap.js';
 
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext.js';
@@ -26,6 +26,10 @@ export default function Login(){
             login(res);
             navigate('/');
 
+            let closeButtonEl = document.querySelector('.btn-close')
+            closeButtonEl.click()
+
+    
         })
         .catch(err =>{
 
@@ -40,6 +44,7 @@ export default function Login(){
         navigate('/register')
 
     }
+
 
 
   return(
