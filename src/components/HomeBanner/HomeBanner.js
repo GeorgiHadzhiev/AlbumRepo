@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { motion } from 'framer-motion';
 
 import {Card} from 'react-bootstrap'

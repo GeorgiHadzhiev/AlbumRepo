@@ -1,5 +1,6 @@
 import { Link,useNavigate } from 'react-router-dom'
-import styles from './Login.module.css'
+import './Login.css'
+// import bootstrap from 'bootstrap'
 
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext.js';
@@ -34,9 +35,16 @@ export default function Login(){
 
     }
 
+    function onClickHandler(e){
+
+        navigate('/register')
+
+    }
+
+
   return(
 
-      <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" >
           <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasExampleLabel">Enter your details</h5>
               <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -57,13 +65,15 @@ export default function Login(){
                         </div>
                 </div>
                 <div className="dropdown mt-3">
-                    <input type="submit" className="btn btn-success" value="Login" data-bs-dismiss="offcanvas" aria-label="Close" />
+                    <input type="submit" className="btn btn-success" value="Login"/>
                 </div>
             </div>
 
           </form>
 
-            <Link className={styles.registerLink} to="/register">Don't have an account?<br/>Click here to Register</Link>
+            <div className="col-sm-12">
+                <button className="registerLinkButton" data-bs-dismiss="offcanvas" aria-label="Close" onClick={onClickHandler}>Don't Have an account?<br/>Click here to register!</button>
+            </div>
 
       </div>
 

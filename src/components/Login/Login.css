@@ -1,0 +1,19 @@
+.registerLinkButton{
+
+    margin: 12px;
+    width: 282px;
+    font-size: 16px;
+    border:#f70e0ea4 solid 1px;
+    padding: 10px 50px;
+    background-color: #f70e0ea1;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    color: white
+
+}
+.registerLinkButton:hover {
+    background-color: black;
+    border: black solid 1px;
+    color: #fff;
+} 
