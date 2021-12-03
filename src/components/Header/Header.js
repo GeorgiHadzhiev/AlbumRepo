@@ -15,35 +15,35 @@ export default function Header(){
 
         <>
 
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container-fluid">
-                <Link className="navbar-brand" to="/">AlbumRepo</Link>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li className="nav-item">
-                        <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-                    </li>
-                    <li className="nav-item">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div className="container-fluid">
+                    <Link className="navbar-brand" to="/">AlbumRepo</Link>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                        </li>
+                        <li className="nav-item">
 
-                        {user.email
+                            {user.email
 
-                            ?<UserNav />
-                            :<GuestNav />
+                                ?<UserNav />
+                                :<GuestNav />
 
-                        } 
+                            } 
 
-                    </li>
-                </ul>
-                
+                        </li>
+                    </ul>
+                    
+                    </div>
                 </div>
+            </nav>
+
+            <div id="login">
+
+                <Login />
+
             </div>
-        </nav>
-
-        <div id="login">
-
-            <Login />
-
-        </div>
 
 
         </>
