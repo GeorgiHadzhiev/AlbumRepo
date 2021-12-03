@@ -27,7 +27,7 @@ export default function Header(){
 
                             {user.email
 
-                                ?<UserNav />
+                                ?<UserNav email={user.email} />
                                 :<GuestNav />
 
                             } 

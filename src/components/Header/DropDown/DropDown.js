@@ -21,8 +21,8 @@ export default function DropDown(){
     return( 
 
         <div className={styles.dropDown}>
-            <DropDownItem >Add Page</DropDownItem>
-            <DropDownItem >Add Page</DropDownItem>
+            <DropDownItem>My Profile</DropDownItem>
+            <DropDownItem>Add an Album</DropDownItem>
 
         </div>
 
