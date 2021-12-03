@@ -16,6 +16,8 @@
 
 .dropDownItem{
 
+  text-decoration: none;
+  color: white;
   height: 50px;
   display: flex;
   align-items: center;

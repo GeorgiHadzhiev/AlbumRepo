@@ -1,14 +1,36 @@
+import { useNavigate } from 'react-router'
 import styles from './DropDown.module.css'
+
 
 function DropDownItem(props){
 
+    let navigate = useNavigate();
+
+    function onClickProfileHandler(props){
+        
+        
+        let page = props.target.textContent
+    
+        if(page === "My Profile"){
+    
+            navigate('/myProfile')
+    
+        }
+        else if(page === "Add an Album"){
+    
+            navigate('/add')
+    
+        }
+    
+    }
+
     return(
 
-        <a href="/add" className={styles.dropDownItem}>
+        <div onClick={onClickProfileHandler} className={styles.dropDownItem}>
 
             {props.children}
 
-        </a>
+        </div>
 
     )
 
