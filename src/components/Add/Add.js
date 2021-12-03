@@ -34,7 +34,7 @@ export default function Add(){
                                         <input className="contactus" placeholder="Description" type="text" name="Description" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="image" type="text" name="imageUrl" />
+                                        <input className="contactus" placeholder="imageURL" type="text" name="imageUrl" />
                                     </div>
                                     <div className="col-sm-12">
                                         <button className="send">Add the album</button>

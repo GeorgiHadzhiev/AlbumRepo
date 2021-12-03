@@ -12,3 +12,13 @@
   padding: 7px;
 
 }
+.avatar{
+
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  top: -13px;
+
+}

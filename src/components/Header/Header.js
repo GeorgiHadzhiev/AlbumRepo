@@ -9,6 +9,12 @@ export default function Header(){
 
     const {user} = useContext(AuthContext)
 
+    function onClickHandler(){
+
+        console.log('Clicked')
+
+    }
+
     let guestNavigation = (
     
         <div id="guest">
@@ -25,9 +31,12 @@ export default function Header(){
 
         <div id="userNav">
 
-            <span>Welcome, {user.email}</span>
-            {/* <Link className="button" to="/my-pets">My Pets</Link>
-            <Link className="button" to="/create">Add Pet</Link>
+            <img src="icons/avatar5.png" alt="Avatar" className="avatar" onClick={onClickHandler} />
+
+
+            {/* <span>Welcome, {user.email}</span>
+            <Link className="button" to="/adds">Add</Link> */}
+            {/* <Link className="button" to="/create">Add Pet</Link>
             <Link className="button" to="/logout">Logout</Link> */}
 
         </div>
