@@ -34,8 +34,6 @@ function DropDownItem(props){
 
     )
 
-
-
 }
 
 export default function DropDown(){
@@ -43,13 +41,11 @@ export default function DropDown(){
     return( 
 
         <div className={styles.dropDown}>
+            
             <DropDownItem>My Profile</DropDownItem>
             <DropDownItem>Add an Album</DropDownItem>
 
         </div>
-
-
-
 
     )
 
