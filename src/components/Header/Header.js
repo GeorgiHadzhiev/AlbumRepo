@@ -2,18 +2,13 @@ import { Link } from 'react-router-dom'
 
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext.js';
+import UserNav from './UserNav';
 import './Header.css'
 import Login from '../Login'
 
 export default function Header(){
 
     const {user} = useContext(AuthContext)
-
-    function onClickHandler(){
-
-        console.log('Clicked')
-
-    }
 
     let guestNavigation = (
     
@@ -27,22 +22,7 @@ export default function Header(){
 
     )
 
-    let userNavigation = (
-
-        <div id="userNav">
-
-            <img src="icons/avatar5.png" alt="Avatar" className="avatar" onClick={onClickHandler} />
-
-
-            {/* <span>Welcome, {user.email}</span>
-            <Link className="button" to="/adds">Add</Link> */}
-            {/* <Link className="button" to="/create">Add Pet</Link>
-            <Link className="button" to="/logout">Logout</Link> */}
-
-        </div>
-
-    )
-
+    
     return(
 
         <>
@@ -59,7 +39,7 @@ export default function Header(){
 
                         {user.email
 
-                            ?userNavigation
+                            ?<UserNav />
                             :guestNavigation
 
                         } 
