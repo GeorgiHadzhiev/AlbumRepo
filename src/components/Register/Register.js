@@ -2,6 +2,12 @@ import './Register.css'
 
 export default function Register(){
 
+    function onSubmitHandlerRegister(e){
+
+        
+
+    }
+
     return(
 
         <div className="contact-page">
@@ -22,7 +28,7 @@ export default function Register(){
                     <div className=" col-md-6 offset-md-3">
                         <div className="address">
 
-                            <form>
+                            <form method="POST" onSubmit={onSubmitHandlerRegister}>
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <input className="contactus" placeholder="First Name" type="text" name="Name" />
