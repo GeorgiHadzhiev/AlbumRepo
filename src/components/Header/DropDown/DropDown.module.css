@@ -1,8 +1,10 @@
 .dropDown{
 
+    text-align: center;
     position: absolute;
     top: 39px;
     width: 300px;
+    height: 160px;
     transform: translateX(-45%);
     background-color: var(--bg);
     border: var(--border);
@@ -14,10 +16,13 @@
 
 }
 
-.dropDownItem{
+.dropDownItemProfile{
 
-  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 115px;
   color: white;
+  text-decoration: none;
   height: 50px;
   align-items: center;
   border-radius: var(--border-radius);
@@ -26,6 +31,46 @@
 
 }
 
-.dropDownItem:hover {
+.dropDownItemProfile:hover {
+  color: white;
   background-color: #525357;
+}
+.dropDownItemAdd{
+  position: absolute;
+  top: 45px;
+  left: 96px;
+  color: white;
+  text-decoration: none;
+  height: 50px;
+  align-items: center;
+  border-radius: var(--border-radius);
+  transition: background var(--speed);
+  padding: 0.5rem;
+
+
+}
+
+.dropDownItemAdd:hover {
+  color: white;
+  background-color: #525357;
+}
+.dropDownItemLogout{
+
+  position: absolute;
+  top: 95px;
+  left: 121px;
+  color: white;
+  text-decoration: none;
+  height: 50px;
+  align-items: center;
+  border-radius: var(--border-radius);
+  transition: background var(--speed);
+  padding: 0.5rem;
+
+}
+.dropDownItemLogout:hover {
+
+  color: white;
+  background-color: #525357;
+
 }
