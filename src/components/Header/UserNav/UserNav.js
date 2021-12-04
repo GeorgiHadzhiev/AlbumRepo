@@ -11,7 +11,7 @@ export default function UserNav({email}){
 
         <div id="userNav">
 
-            <img src="icons/avatar5.png" alt="Avatar" className="avatar" onClick={() => setOpen(!open)} />
+            <img src="/icons/avatar5.png" alt="Avatar" className="avatar" onClick={() => setOpen(!open)} />
             <span id="welcomeMessage">Welcome, {email}</span>
 
             {open && <DropDown />}
