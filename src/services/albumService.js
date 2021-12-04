@@ -49,12 +49,32 @@ const create = async (data,token) =>{
 
 }
 
+const deletePost = async (id,token) =>{
+
+    let res = await fetch(`${baseUrl}/albums/${id}`, {
+
+        method: 'DELETE',
+        headers:{
+
+            'X-Authorization': token,
+            
+        },
+
+    })
+
+    let result = await res.json()
+
+    return result
+
+}
+
 
 const albumService = {
 
     getAll,
-    create,
     getOne,
+    create,
+    deletePost,
 
 }
 

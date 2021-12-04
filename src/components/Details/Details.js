@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams,useNavigate } from "react-router-dom"
 import { useState,useEffect,useContext } from "react";
 import { Link } from "react-router-dom"
 import {AuthContext} from '../../contexts/AuthContext.js'
@@ -6,6 +6,8 @@ import {AuthContext} from '../../contexts/AuthContext.js'
 import albumService from '../../services/albumService.js'
 
 export default function Details(){
+
+    let navigate = useNavigate();
 
     const {user} = useContext(AuthContext);
 
@@ -21,7 +23,20 @@ export default function Details(){
 
         })
 
-    }, [albumId])
+    }, [albumId]);
+
+    function onDeleteHandler(e){
+
+        e.preventDefault();
+
+        albumService.deletePost(albumId,user.accessToken)
+        .then(() =>{
+
+            navigate('/catalog');
+
+        });
+
+    }
 
     return(
 
@@ -37,7 +52,7 @@ export default function Details(){
                         ?(
                             <>
                                 <Link className="button" to="/edit">Edit</Link>
-                                <Link className="button" to="/delete">Delete</Link>
+                                <button className="button" onClick={onDeleteHandler}>Delete</button>
                             </>
 
                         )
