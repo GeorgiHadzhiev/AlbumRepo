@@ -32,7 +32,7 @@ export default function Details(){
                 <p className="img"><img src={album.imageURL} alt="broken" /></p>
                 <div className="actions">
 
-                    {user._id === album._ownerId
+                    {user._id && (user._id === album._ownerId
                     
                         ?(
                             <>
@@ -48,7 +48,7 @@ export default function Details(){
                             </>
                         )
 
-                    }
+                    )}
 
                     
                 </div>
