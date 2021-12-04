@@ -1,10 +1,13 @@
 const baseUrl = 'http://localhost:3030/jsonstore'
 
-const getAll = () => {
+const getAll = async () => {
 
-    return fetch(`${baseUrl}/albums`)
-            .then(res => res.json())
+    let res = await fetch(`${baseUrl}/albums`)
+    let albums = await res.json()
 
+    let result = Object.values(albums)
+    return result
+    
 }
 
 

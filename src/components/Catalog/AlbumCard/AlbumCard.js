@@ -7,7 +7,7 @@ export default function AlbumCard({album}){
             <p>Year: {album.year}</p>
             <p>Description: {album.description}</p>
             <p>
-                <img src={album.imageURL}/>
+                <img src={album.imageURL} alt="broken"/>
             </p>
             <a href="/details">Details</a>
 
