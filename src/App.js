@@ -6,16 +6,18 @@ import useLocalStorage from './hooks/useLocaleStorage.js';
 import Main from './components/Main/Main.js';
 import Loader from './components/Loader'
 
+const initialState = {
+
+  _id: '',
+  email: '',
+  accessToken: '',
+
+}
+
 function App() {
 
   const [isLoading,setIsLoading] = useState("")
-  const [user,setUser] = useLocalStorage('user',{
-
-    _id: '',
-    email: '',
-    accessToken: '',
-
-  });
+  const [user,setUser] = useLocalStorage('user', initialState)
 
   useEffect(() => {
     
@@ -31,17 +33,16 @@ function App() {
 
   }
 
-  const logout = () =>{
+  const logout = () => {
 
-    
+    setUser(initialState);
 
   }
-
-
+  
   return (
     <div className="App">
       
-      <AuthContext.Provider value={{user,login}}>
+      <AuthContext.Provider value={{user,login,logout}}>
       {
 
         !isLoading 

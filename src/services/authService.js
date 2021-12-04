@@ -54,10 +54,18 @@ async function register(firstName,lastName,email,password){
 
 }
 
-async function logout(){
+async function logout(token){
 
-    fetch(`${baseUrl}/logout`)
-    .then()
+    return fetch(`${baseUrl}/logout`, {
+
+        headers:{
+
+            'X-Authorization': token
+
+        }
+
+    })
+    
 
 }
 
