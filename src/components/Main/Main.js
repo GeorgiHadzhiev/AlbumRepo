@@ -7,6 +7,7 @@ import Register from '../Register';
 import MyProfile from '../MyProfile';
 import Catalog from '../Catalog';
 import Add from '../Add';
+import Details from '../Details';
 import Footer from '../Footer';
 
 
@@ -26,6 +27,8 @@ export default function Main(){
                     <Route path="/catalog" element={<Catalog />} />
                     <Route path="/myProfile" element={<MyProfile />} />
                     <Route path="/add" element={<Add />} />
+                    <Route path="/details/:albumId" element={<Details />} />
+
         
                 </Routes>
             

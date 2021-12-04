@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function AlbumCard({album}){
 
     return(
@@ -9,7 +11,7 @@ export default function AlbumCard({album}){
             <p>
                 <img src={album.imageURL} alt="broken"/>
             </p>
-            <a href="/details">Details</a>
+            <Link to={`/details/${album._id}`}>Details</Link>
 
 
 
