@@ -24,7 +24,6 @@ export default function Login(){
         .then(res => {
 
             login(res);
-            navigate('/');
 
             let closeButtonEl = document.querySelector('.btn-close')
             closeButtonEl.click()
