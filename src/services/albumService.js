@@ -10,6 +10,15 @@ const getAll = async () => {
     
 }
 
+const getOne = async (id) => {
+
+    let res = await fetch(`${baseUrl}/albums/${id}`)
+    let album = await res.json();
+
+    return album
+
+}
+
 const create = async (data) =>{
 
     let res = await fetch(`${baseUrl}/albums`, {
@@ -35,6 +44,7 @@ const albumService = {
 
     getAll,
     create,
+    getOne,
 
 }
 

@@ -1,6 +1,29 @@
+import { useParams } from "react-router-dom"
+import { useState,useEffect } from "react";
+import { Link } from "react-router-dom"
 
+import albumService from '../../services/albumService.js'
 
 export default function Details(){
+
+    const {albumId} = useParams();
+    const [album,setAlbum] = useState({}); // default value has to be an empty object as to not read as 'undefined'
+
+    useEffect(() => {
+
+        albumService.getOne(albumId)
+        .then(res =>{
+
+            console.log(res)
+
+            setAlbum(res)
+
+        })
+
+        
+
+    }, [])
+
 
     return(
 
@@ -8,10 +31,10 @@ export default function Details(){
             <div className="album-information">
                 <h3>Name: {album.name}</h3>
                 <p className="type">Year: {album.year}</p>
-                <p className="img"><img src={album.imageUrl} /></p>
+                <p className="img"><img src={album.imageURL} /></p>
                 <div className="actions">
-                    <a className="button" href="/edit">Edit</a>
-                    <a className="button" href="/delete">Delete</a>
+                    <Link className="button" to="/edit">Edit</Link>
+                    <Link className="button" to="/delete">Delete</Link>
                     
                 </div>
             </div>
