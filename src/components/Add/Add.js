@@ -2,6 +2,18 @@
 
 export default function Add(){
 
+    function onAlbumCreate(e){
+
+        let formData = new FormData(e.currentTarget);
+
+        let name = formData('Name')
+        let year = formData('Year')
+        let description = formData('Description')
+        let imageUrl = formData('imageUrl')
+
+    }
+
+
     return(
 
         <div className="contact-page">
@@ -22,7 +34,7 @@ export default function Add(){
                     <div className=" col-md-6 offset-md-3">
                         <div className="address">
 
-                            <form>
+                            <form onSubmit={onAlbumCreate}>
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <input className="contactus" placeholder="Name" type="text" name="Name" />
@@ -47,8 +59,6 @@ export default function Add(){
             </div>
 
         </div>
-
-
 
     )
 
