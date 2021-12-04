@@ -1,4 +1,7 @@
+import { useState,useEffect } from "react"
+
 import AlbumCard from "./AlbumCard"
+import albumService from "../../services/albumService.js"
 
 export default function Catalog(){
 
