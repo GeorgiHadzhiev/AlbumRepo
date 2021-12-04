@@ -14,16 +14,11 @@ export default function Details(){
         albumService.getOne(albumId)
         .then(res =>{
 
-            console.log(res)
-
             setAlbum(res)
 
         })
 
-        
-
     }, [])
-
 
     return(
 
