@@ -1,9 +1,12 @@
 import { useNavigate } from 'react-router';
+import { useContext } from 'react';
+import {AuthContext} from '../../contexts/AuthContext.js'
 
 import albumService from '../../services/albumService.js'
 
 export default function Add(){
 
+    const {user} = useContext(AuthContext)
     let navigate  = useNavigate()
 
     function onAlbumCreate(e){
@@ -24,7 +27,7 @@ export default function Add(){
             description,
             imageURL,
 
-        })
+        },user.accessToken)
         .then(res => {
 
             navigate('/catalog')

@@ -19,7 +19,7 @@ const getOne = async (id) => {
 
 }
 
-const create = async (data) =>{
+const create = async (data,token) =>{
 
     let res = await fetch(`${baseUrl}/albums`, {
 
@@ -27,6 +27,7 @@ const create = async (data) =>{
         headers:{
 
             'content-type': 'application/json',
+            'X-Authorization': token,
             
         },
         body: JSON.stringify(data)
