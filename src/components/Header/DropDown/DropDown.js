@@ -21,6 +21,11 @@ function DropDownItem(props){
             navigate('/add')
     
         }
+        else if(page === "Logout"){
+
+            navigate('/logout')
+
+        }
     
     }
 
@@ -44,6 +49,7 @@ export default function DropDown(){
             
             <DropDownItem>My Profile</DropDownItem>
             <DropDownItem>Add an Album</DropDownItem>
+            <DropDownItem>Logout</DropDownItem>
 
         </div>
 
