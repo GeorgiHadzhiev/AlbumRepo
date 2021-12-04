@@ -1,7 +1,7 @@
 
 
 
-export default function Logout({onLogout}){
+export default function Logout(){
 
     
 

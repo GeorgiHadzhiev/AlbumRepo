@@ -11,6 +11,8 @@ export default function AlbumCard({album}){
             <p>
                 <img src={album.imageURL} alt="broken"/>
             </p>
+            <p>Likes: </p>
+            <p>Disslikes: </p>
             <Link to={`/details/${album._id}`}>Details</Link>
 
 

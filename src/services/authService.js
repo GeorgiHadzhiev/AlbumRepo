@@ -1,9 +1,9 @@
-const baseUrl = 'http://localhost:3030'
+const baseUrl = 'http://localhost:3030/users'
 
 
 async function login(email,password){
 
-    let res = await fetch(`${baseUrl}/users/login`, {
+    let res = await fetch(`${baseUrl}/login`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -29,7 +29,7 @@ async function login(email,password){
 
 async function logout(){
 
-    fetch(`${baseUrl}/users/logout`)
+    fetch(`${baseUrl}/logout`)
     .then()
 
 }
