@@ -1,8 +1,32 @@
 import './Register.css'
 
+import authService from '../../services/authService.js';
+
 export default function Register(){
 
     function onSubmitHandlerRegister(e){
+
+        e.preventDefault();
+        let formData = new FormData(e.currentTarget);
+
+        let firstName = formData.get('first-name');
+        let lastName = formData.get('last-name');
+        let email = formData.get('email');
+        let password = formData.get('password');
+
+        authService.register(firstName,lastName,email,password)
+        .then(res => {
+
+            
+
+        })
+        .catch(err => {
+
+            console.log(err)
+
+        })
+        
+
 
         
 
@@ -31,19 +55,19 @@ export default function Register(){
                             <form method="POST" onSubmit={onSubmitHandlerRegister}>
                                 <div className="row">
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="First Name" type="text" name="Name" />
+                                        <input className="contactus" placeholder="First Name" type="text" name="first-name" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Last Name" type="text" name="Name" />
+                                        <input className="contactus" placeholder="Last Name" type="text" name="last-name" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Email" type="text" name="Email" />
+                                        <input className="contactus" placeholder="Email" type="text" name="email" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Password" type="password" name="Email" />
+                                        <input className="contactus" placeholder="Password" type="password" name="password" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Repeat Password" type="password" name="Email" />
+                                        <input className="contactus" placeholder="Repeat Password" type="password" name="repeat-password" />
                                     </div>
                                     <div className="col-sm-12">
                                         <button className="send">Create Account</button>

@@ -27,6 +27,33 @@ async function login(email,password){
 
 }
 
+async function register(firstName,lastName,email,password){
+
+    let res = await fetch(`${baseUrl}/register`, {
+
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({firstName,lastName,email,password})
+
+    })
+
+    let jsonResult = await res.json();
+
+    if(res.ok){
+
+        return jsonResult;
+
+    }
+    else{
+
+        throw jsonResult.message;
+
+    }
+
+}
+
 async function logout(){
 
     fetch(`${baseUrl}/logout`)
@@ -37,6 +64,7 @@ async function logout(){
 const authService = {
 
     login,
+    register,
     logout,
 
 }
