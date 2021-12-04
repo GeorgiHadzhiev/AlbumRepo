@@ -1,15 +1,35 @@
+import { useNavigate } from 'react-router';
 
+import albumService from '../../services/albumService.js'
 
 export default function Add(){
 
+    let navigate  = useNavigate()
+
     function onAlbumCreate(e){
+
+        e.preventDefault()
 
         let formData = new FormData(e.currentTarget);
 
-        let name = formData('Name')
-        let year = formData('Year')
-        let description = formData('Description')
-        let imageUrl = formData('imageUrl')
+        let name = formData.get('Name')
+        let year = formData.get('Year')
+        let description = formData.get('Description')
+        let imageURL = formData.get('imageURL')
+
+        albumService.create({
+
+            name,
+            year,
+            description,
+            imageURL,
+
+        })
+        .then(res => {
+
+            navigate('/catalog')
+
+        })
 
     }
 
@@ -46,7 +66,7 @@ export default function Add(){
                                         <input className="contactus" placeholder="Description" type="text" name="Description" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="imageURL" type="text" name="imageUrl" />
+                                        <input className="contactus" placeholder="imageURL" type="text" name="imageURL" />
                                     </div>
                                     <div className="col-sm-12">
                                         <button className="send">Add the album</button>

@@ -10,10 +10,31 @@ const getAll = async () => {
     
 }
 
+const create = async (data) =>{
+
+    let res = await fetch(`${baseUrl}/albums`, {
+
+        method: 'POST',
+        headers:{
+
+            'content-type': 'application/json',
+            
+        },
+        body: JSON.stringify(data)
+
+    })
+
+    let result = await res.json()
+
+    return result
+
+}
+
 
 const albumService = {
 
     getAll,
+    create,
 
 }
 
