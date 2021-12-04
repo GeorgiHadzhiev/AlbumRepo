@@ -1,8 +1,15 @@
 import './Register.css'
 
 import authService from '../../services/authService.js';
+import { AuthContext } from '../../contexts/AuthContext.js'
+import { useContext } from 'react';
+import { useNavigate } from 'react-router';
 
 export default function Register(){
+
+    let navigate = useNavigate()
+
+    const {login} = useContext(AuthContext)
 
     function onSubmitHandlerRegister(e){
 
@@ -17,12 +24,13 @@ export default function Register(){
         authService.register(firstName,lastName,email,password)
         .then(res => {
 
-            
+            login(res);
+            navigate('/catalog');
 
         })
         .catch(err => {
 
-            console.log(err)
+            console.log(err);
 
         })
         
