@@ -15,6 +15,12 @@ export default function Catalog(){
             setAlbums(res)
 
         })
+        .catch(err =>{
+
+            console.log(err[1])
+
+        })
+
 
     },[])
 
@@ -22,11 +28,18 @@ export default function Catalog(){
 
         <section id="catalog-page">
             <h1>All Albums</h1>
-            <ul>
+            {albums.length > 0
+            
+                ?(
+                    <ul>
 
-                {albums.map(x => <AlbumCard key={x._id} album={x} />)}
+                        {albums.map(x => <AlbumCard key={x._id} album={x} />)}
 
-            </ul>
+                    </ul>
+                )
+                : <p className="no-albums">Sorry, no albums found :(</p>
+            
+            }
 
 
         

@@ -4,10 +4,19 @@ const getAll = async () => {
 
     let res = await fetch(`${baseUrl}/albums`)
     let albums = await res.json()
-
     let result = Object.values(albums)
-    return result
-    
+
+    if(res.ok){
+
+        return result
+
+    }
+    else{
+
+        throw result
+
+    }
+
 }
 
 const getOne = async (id) => {
@@ -30,7 +39,7 @@ const create = async (data,token) =>{
             'X-Authorization': token,
             
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify({...data,likes: 0,dislikes: 0})
 
     })
 
