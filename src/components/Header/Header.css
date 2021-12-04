@@ -27,6 +27,12 @@
   border-bottom: var(--border);
 
 }
+.catalog{
+
+  position: relative;
+  left: 15px;
+
+}
 .avatar{
 
   --button-size: calc(var(--nav-size) * 0.5);
