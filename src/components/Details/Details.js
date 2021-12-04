@@ -57,6 +57,10 @@ export default function Details(){
                 <h3>Description:</h3>
                 <p>{album.description}</p>
             </div>
+            <div className="album-rating">
+                <p>Likes: {album.likes}</p>
+                <p>Dislikes: {album.dislikes}</p>
+            </div>
         </section>
 
     )
