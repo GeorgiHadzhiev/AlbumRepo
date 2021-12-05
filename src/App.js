@@ -21,7 +21,6 @@ function App() {
 
   useEffect(() => {
     
-
     setIsLoading(<Main/>)
 
     
@@ -38,7 +37,7 @@ function App() {
     setUser(initialState);
 
   }
-  
+
   return (
     <div className="App">
       
