@@ -16,7 +16,7 @@ export default function Logout(){
         .then(() =>{
         
             logout();    
-            navigate('/')
+            navigate('/');
         
         },)
 
