@@ -1,10 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState,useEffect } from 'react';
 
 import {AuthContext} from './contexts/AuthContext.js'
 import useLocalStorage from './hooks/useLocaleStorage.js';
 import Main from './components/Main/Main.js';
-import Loader from './components/Loader'
 
 const initialState = {
 
