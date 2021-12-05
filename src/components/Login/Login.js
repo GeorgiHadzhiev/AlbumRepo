@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 import './Login.css'
-import 'bootstrap/dist/js/bootstrap.js';
 
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext.js';

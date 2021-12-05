@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
 import {AuthContext} from './contexts/AuthContext.js'
 import useLocalStorage from './hooks/useLocaleStorage.js';

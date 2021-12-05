@@ -4,8 +4,8 @@ import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext.js';
 import UserNav from './UserNav';
 import GuestNav from './GuestNav';
-import './Header.css'
 import Login from '../Login'
+import './Header.css'
 
 export default function Header(){
 
