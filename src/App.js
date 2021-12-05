@@ -16,15 +16,7 @@ const initialState = {
 
 function App() {
 
-  const [isLoading,setIsLoading] = useState("")
   const [user,setUser] = useLocalStorage('user', initialState)
-
-  useEffect(() => {
-    
-    setIsLoading(<Main/>)
-
-    
-  },[])
 
   const login = (data) => {
 
@@ -42,13 +34,9 @@ function App() {
     <div className="App">
       
       <AuthContext.Provider value={{user,login,logout}}>
-      {
 
-        !isLoading 
-        ?<Loader />
-        :isLoading
+        <Main/>
 
-      }
       </AuthContext.Provider>
 
     </div>
