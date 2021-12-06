@@ -7,14 +7,12 @@ export default function Home(){
 
     return(
 
-    <>
-        <HomeBanner />
-        <OurServices />
+        <>
+            <HomeBanner />
+            <OurServices />
 
-    </>
+        </>
 
-    )
-
-
+    );
 
 }

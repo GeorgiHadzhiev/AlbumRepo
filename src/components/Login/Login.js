@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
-import './Login.css'
-
 import { useContext } from 'react';
+
+import './Login.css'
 import { AuthContext } from '../../contexts/AuthContext.js';
 import authService from '../../services/authService.js'
 
@@ -42,8 +42,6 @@ export default function Login(){
         navigate('/register')
 
     }
-
-
 
   return(
 
