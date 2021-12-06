@@ -10,6 +10,4 @@ function MyProfile(){
         
     }
 
-const PrivateComponent = isAuth(MyProfile)
-
-export default PrivateComponent;
+export default isAuth(MyProfile);
