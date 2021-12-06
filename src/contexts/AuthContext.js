@@ -11,7 +11,7 @@ const initialState = {
   
 }
 
-export default function AuthProvder({children}){
+export function AuthProvder({children}){
     
     const [user,setUser] = useLocalStorage('user', initialState)
 

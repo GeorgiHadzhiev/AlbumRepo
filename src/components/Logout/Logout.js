@@ -14,7 +14,7 @@ export default function Logout(){
 
         authService.logout(user.accessToken)
         .then(() =>{
-        
+            
             logout();    
             navigate('/');
         
