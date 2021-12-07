@@ -1,29 +1,33 @@
 import { useNavigate } from 'react-router';
-import { useContext } from 'react';
-import {AuthContext} from '../../contexts/AuthContext.js'
+import { useContext,useState } from 'react';
 
+import {AuthContext} from '../../contexts/AuthContext.js'
 import albumService from '../../services/albumService.js'
+import styles from './Add.module.css'
 
 export default function Add(){
 
-    const {user} = useContext(AuthContext)
-    let navigate  = useNavigate()
+    const {user} = useContext(AuthContext);
+    let navigate  = useNavigate();
+
 
     function onAlbumCreate(e){
 
         e.preventDefault()
 
+
         let formData = new FormData(e.currentTarget);
 
-        let name = formData.get('Name')
-        let year = formData.get('Year')
-        let description = formData.get('Description')
+        let name = formData.get('name')
+        let data = formData.get('data')
+        let numberOfSongs = formData.get('number-of-songs')
+        let description = formData.get('description')
         let imageURL = formData.get('imageURL')
 
         albumService.create({
 
             name,
-            year,
+            data,
             description,
             imageURL,
 
@@ -59,14 +63,30 @@ export default function Add(){
 
                             <form onSubmit={onAlbumCreate}>
                                 <div className="row">
+                                    <h1>General Info</h1>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Name" type="text" name="Name" />
+                                        <input className="contactus" placeholder="Name" type="text" name="name" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Year" type="text" name="Year" />
+                                        <input className="contactus" type="date" name="data" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Description" type="text" name="Description" />
+                                        <input className="contactus" type="number" placeholder="Number of tracks" name="number-of-songs" />
+                                    </div>
+
+                                    <h1>Tracklist:</h1>
+
+                                    <div className={styles.tracklistContainer}>
+                                        <input className={styles.tracklist} placeholder="Tracklist" type="text" name="tracklist" />
+                                    </div>
+                                    
+                                    <h1>Additional Info</h1>
+
+                                    <div className="col-sm-12">
+                                        <textarea className={styles.description} placeholder="Description" type="text" name="description" />
+                                    </div>
+                                    <div className="col-sm-12">
+                                        <input className="contactus" placeholder="Composer/Artist" type="text" name="composer-artist" />
                                     </div>
                                     <div className="col-sm-12">
                                         <input className="contactus" placeholder="imageURL" type="text" name="imageURL" />
