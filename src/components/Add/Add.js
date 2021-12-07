@@ -19,7 +19,7 @@ export default function Add(){
         let formData = new FormData(e.currentTarget);
 
         let name = formData.get('name')
-        let data = formData.get('data')
+        let date = formData.get('date')
         let numberOfSongs = formData.get('number-of-songs')
         let tracklist = formData.get('tracklist')
         let description = formData.get('description')
@@ -29,7 +29,7 @@ export default function Add(){
         albumService.create({
 
             name,
-            data,
+            date,
             numberOfSongs,
             tracklist,
             description,
@@ -73,7 +73,7 @@ export default function Add(){
                                         <input className="contactus" placeholder="Name" type="text" name="name" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" type="date" name="data" />
+                                        <input className="contactus" type="date" name="date" />
                                     </div>
                                     <div className="col-sm-12">
                                         <input className="contactus" type="number" placeholder="Number of tracks" name="number-of-songs" />

@@ -40,10 +40,10 @@ export default function Edit(){
                                 <div className="row" onSubmit={petEditSubmitHandler}>
                                     <h1>General Info:</h1>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Name" type="text" name="name" />
+                                        <input className="contactus" defaultValue={album.name} type="text" name="name" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" type="date" name="data" />
+                                        <input className="contactus" type="date" name="date" defaultValue={album.date} />
                                     </div>
                                     <div className="col-sm-12">
                                         <input className="contactus" type="number" placeholder="Number of tracks" name="number-of-songs" />
