@@ -39,6 +39,7 @@ export default function Edit(){
                             <form method="POST">
                                 <div className="row" onSubmit={petEditSubmitHandler}>
                                     <h1>General Info:</h1>
+                                    
                                     <div className="col-sm-12">
                                         <input className="contactus" defaultValue={album.name} type="text" name="name" />
                                     </div>
