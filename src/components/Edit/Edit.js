@@ -1,19 +1,8 @@
-import { useEffect, useState } from 'react';
-
-
 
 import styles from './Edit.module.css'
 import albumService from '../../services/albumService.js'
 
 export default function Edit(){
-
-    const [album,setAlbum] = useState({});
-
-    useEffect(() =>{
-
-        
-
-    },[])
 
     function petEditSubmitHandler(e){
 
