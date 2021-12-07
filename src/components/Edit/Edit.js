@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import styles from './Edit.module.css'
@@ -6,13 +7,31 @@ import useAlbumState from '../../hooks/useAlbumState.js';
 
 export default function Edit(){
 
-    const {albumId} = useParams()
-    const [album,setAlbum] = useAlbumState(albumId);
+    const {albumId} = useParams();
+    const [errors,setErrors] = useState({name: null});
+    const [album] = useAlbumState(albumId);
 
     function petEditSubmitHandler(e){
 
         e.preventDefault();
 
+
+    }
+
+    function nameChangeHandler(e){
+
+        let currentName = e.target.value
+
+        if(currentName.length <= 0 ){
+
+            setErrors(state =>({...state, name: 'Name cannot be blank'}))
+
+        }
+        else{
+
+            setErrors(state => ({...state,name: null}))
+
+        }
 
     }
 
@@ -39,10 +58,11 @@ export default function Edit(){
                             <form method="POST">
                                 <div className="row" onSubmit={petEditSubmitHandler}>
                                     <h1>General Info:</h1>
-                                    
-                                    <div className="col-sm-12">
-                                        <input className="contactus" defaultValue={album.name} type="text" name="name" />
+
+                                    <div className="col-sm-12" >
+                                        <input className="contactus" style={{borderColor: errors.name ? 'red' : 'green'}} defaultValue={album.name} type="text" name="name" onBlur={nameChangeHandler} />
                                     </div>
+                                    <span className={styles.error}>{errors.name}</span>
                                     <div className="col-sm-12">
                                         <input className="contactus" type="date" name="date" defaultValue={album.date} />
                                     </div>
