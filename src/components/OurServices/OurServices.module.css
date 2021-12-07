@@ -6,6 +6,8 @@
 }
 .container {
     max-width: 1140px;
+    position: absolute;
+    right: 140px;
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
