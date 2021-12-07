@@ -46,28 +46,28 @@ export default function Edit(){
                                         <input className="contactus" type="date" name="date" defaultValue={album.date} />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" type="number" placeholder="Number of tracks" name="number-of-songs" />
+                                        <input className="contactus" type="number" defaultValue={album.numberOfSongs} name="number-of-songs" />
                                     </div>
 
                                     <h1>Tracklist:</h1>
 
                                     <div className={styles.tracklistContainer}>
-                                        <textarea className={styles.tracklist} placeholder="Tracklist" type="text" name="tracklist" />
+                                        <textarea className={styles.tracklist} defaultValue={album.tracklist} type="text" name="tracklist" />
                                     </div>
                                     
                                     <h1>Additional Info:</h1>
 
                                     <div className="col-sm-12">
-                                        <textarea className={styles.description} placeholder="Description" type="text" name="description" />
+                                        <textarea className={styles.description} defaultValue={album.description} type="text" name="description" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Composer/Artist" type="text" name="composer-artist" />
+                                        <input className="contactus" defaultValue={album.composerArtist} type="text" name="composer-artist" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Album Art" type="text" name="imageURL" />
+                                        <input className="contactus" defaultValue={album.imageURL} type="text" name="imageURL" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <button className="send">Confirm</button>
+                                        <button className="send">Edit</button>
                                     </div>
                                 </div>
                             </form>
