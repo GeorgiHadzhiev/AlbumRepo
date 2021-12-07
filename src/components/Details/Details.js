@@ -1,7 +1,7 @@
 import { useParams,useNavigate,Link } from "react-router-dom"
 import { useState,useEffect,useContext } from "react";
-import {AuthContext} from '../../contexts/AuthContext.js'
 
+import {AuthContext} from '../../contexts/AuthContext.js'
 import albumService from '../../services/albumService.js'
 import DeletionDialog from '../Common/DeletionDialog'
 
@@ -49,6 +49,34 @@ export default function Details(){
 
     }
 
+    function likeButtonClick(e){
+
+        if(album.likes.includes(user._id)){
+
+            console.log('User Already liked');
+            return; 
+
+        }
+
+        let likes = [...album.likes,user._id]
+        let likedAlbum = {...album,likes}
+
+        albumService.like(album._id,likedAlbum, user.accessToken)
+        .then(res =>{
+
+            console.log(res)
+
+            setAlbum(state=>({
+
+                ...state,
+                likes,
+    
+            }))
+
+        })
+
+    }
+
     return(
 
         <>
@@ -71,7 +99,7 @@ export default function Details(){
                             )
                             :(
                                 <>
-                                    <button>Like</button>
+                                    <button onClick={likeButtonClick}>Like</button>
                                     <button>Disslike</button>
                                 </>
                             )
