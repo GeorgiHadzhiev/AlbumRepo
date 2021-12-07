@@ -21,7 +21,7 @@ export default function UserNav({email}){
             <img src="/icons/avatar5.png" alt="Avatar" className="avatar" onClick={onClickHandler} />
             <span id="welcomeMessage">Welcome, {email}</span>
 
-            {open && <DropDown open={open} setOpen={setOpen}  />}
+            {open && <DropDown setOpen={setOpen}  />}
 
         </div>
 
