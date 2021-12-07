@@ -1,50 +1,26 @@
-import { useNavigate } from 'react-router';
-import { useContext } from 'react';
+import { useEffect, useState } from 'react';
 
-import {AuthContext} from '../../contexts/AuthContext.js'
+
+
+import styles from './Edit.module.css'
 import albumService from '../../services/albumService.js'
-import styles from './Add.module.css'
 
-export default function Add(){
+export default function Edit(){
 
-    const {user} = useContext(AuthContext);
-    let navigate  = useNavigate();
+    const [album,setAlbum] = useState({});
 
+    useEffect(() =>{
 
-    function onAlbumCreate(e){
+        
 
-        e.preventDefault()
+    },[])
 
+    function petEditSubmitHandler(e){
 
-        let formData = new FormData(e.currentTarget);
+        e.preventDefault();
 
-        let name = formData.get('name')
-        let data = formData.get('data')
-        let numberOfSongs = formData.get('number-of-songs')
-        let tracklist = formData.get('tracklist')
-        let description = formData.get('description')
-        let composerArtist = formData.get('composer-artist')
-        let imageURL = formData.get('imageURL')
-
-        albumService.create({
-
-            name,
-            data,
-            numberOfSongs,
-            tracklist,
-            description,
-            composerArtist,
-            imageURL,
-
-        },user.accessToken)
-        .then(res => {
-
-            navigate('/catalog')
-
-        })
 
     }
-
 
     return(
 
@@ -54,7 +30,7 @@ export default function Add(){
                     <div className="row">
                         <div className="col-md-12">
                             <div className="contacttitlepage">
-                                <h2>Add An Album</h2>
+                                <h2>Edit the Album Details</h2>
                             </div>
                         </div>
                     </div>
@@ -66,8 +42,8 @@ export default function Add(){
                     <div className=" col-md-6 offset-md-3">
                         <div className="address">
 
-                            <form method="POST" onSubmit={onAlbumCreate}>
-                                <div className="row">
+                            <form method="POST">
+                                <div className="row" onSubmit={petEditSubmitHandler}>
                                     <h1>General Info:</h1>
                                     <div className="col-sm-12">
                                         <input className="contactus" placeholder="Name" type="text" name="name" />
@@ -97,7 +73,7 @@ export default function Add(){
                                         <input className="contactus" placeholder="Album Art" type="text" name="imageURL" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <button className="send">Add the album</button>
+                                        <button className="send">Confirm</button>
                                     </div>
                                 </div>
                             </form>

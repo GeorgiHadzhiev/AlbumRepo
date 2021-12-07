@@ -92,7 +92,7 @@ export default function Details(){
                         
                             ?(
                                 <>
-                                    <Link className="button" to="/edit">Edit</Link>
+                                    <Link className="button" to={`/edit/${albumId}`}>Edit</Link>
                                     <button className="button" onClick={deleteClickHandler}>Delete</button>
                                 </>
 

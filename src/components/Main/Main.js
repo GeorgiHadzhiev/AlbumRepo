@@ -8,6 +8,7 @@ import MyProfile from '../MyProfile';
 import Catalog from '../Catalog';
 import Add from '../Add';
 import Details from '../Details';
+import Edit from '../Edit';
 import Logout from '../Logout';
 import Footer from '../Footer';
 
@@ -28,6 +29,7 @@ export default function Main(){
                     <Route path="/myProfile" element={<MyProfile />} />
                     <Route path="/add" element={<Add />} />
                     <Route path="/details/:albumId" element={<Details />} />
+                    <Route path="/edit/:albumId" element={<Edit />} />
                     <Route path="/logout" element={<Logout />} />
 
         
