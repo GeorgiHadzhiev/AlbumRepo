@@ -37,7 +37,7 @@ export default function Catalog(){
 
                     </ul>
                 )
-                : <p className="no-albums">Sorry, no albums found :(</p>
+                : <p className="no-albums">Sorry, no albums found ☹️</p>
             
             }
 
