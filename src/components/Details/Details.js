@@ -34,6 +34,7 @@ export default function Details(){
         albumService.deletePost(albumId,user.accessToken)
         .then(() =>{
 
+            setShowDeleteDialog(false)
             navigate('/catalog');
 
         })
