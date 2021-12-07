@@ -1,23 +1,10 @@
+import {request} from './requester.js'
+
 const baseUrl = 'http://localhost:3030/data'
 
-const getAll = async () => {
 
-    let res = await fetch(`${baseUrl}/albums`)
-    let albums = await res.json()
-    let result = Object.values(albums)
-
-    if(res.ok){
-
-        return result
-
-    }
-    else{
-
-        throw result
-
-    }
-
-}
+const getAll = () => request(`${baseUrl}/albums`)
+    
 
 const getOne = async (id) => {
 

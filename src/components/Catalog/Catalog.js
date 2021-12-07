@@ -17,7 +17,7 @@ export default function Catalog(){
         })
         .catch(err =>{
 
-            console.log(err[1])
+            console.log(err)
 
         })
 
