@@ -3,29 +3,20 @@ import { useState,useEffect,useContext } from "react";
 
 import {AuthContext} from '../../contexts/AuthContext.js'
 import albumService from '../../services/albumService.js'
+import useAlbumState from "../../hooks/useAlbumState.js";
 import DeletionDialog from '../Common/DeletionDialog'
 
 export default function Details(){
 
     let navigate = useNavigate();
-
+    
     const {user} = useContext(AuthContext);
-
     const {albumId} = useParams();
-    const [album,setAlbum] = useState({}); // default value has to be an empty object as to not read as 'undefined'
+    const [album,setAlbum] = useAlbumState(albumId);
     const [showDeleteDialog,setShowDeleteDialog] = useState(false);
 
 
-    useEffect(() => {
-
-        albumService.getOne(albumId)
-        .then(res =>{
-
-            setAlbum(res)
-
-        })
-
-    }, [albumId]);
+   
 
     function onDeleteHandler(e){
 

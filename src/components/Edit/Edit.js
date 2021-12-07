@@ -1,8 +1,13 @@
+import { useParams } from 'react-router-dom';
 
 import styles from './Edit.module.css'
 import albumService from '../../services/albumService.js'
+import useAlbumState from '../../hooks/useAlbumState.js';
 
 export default function Edit(){
+
+    const {albumId} = useParams()
+    const [album,setAlbum] = useAlbumState(albumId);
 
     function petEditSubmitHandler(e){
 
