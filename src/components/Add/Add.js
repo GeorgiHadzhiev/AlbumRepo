@@ -21,14 +21,19 @@ export default function Add(){
         let name = formData.get('name')
         let data = formData.get('data')
         let numberOfSongs = formData.get('number-of-songs')
+        let tracklist = formData.get('tracklist')
         let description = formData.get('description')
+        let composerArtist = formData.get('composer-artist')
         let imageURL = formData.get('imageURL')
 
         albumService.create({
 
             name,
             data,
+            numberOfSongs,
+            tracklist,
             description,
+            composerArtist,
             imageURL,
 
         },user.accessToken)
@@ -63,7 +68,7 @@ export default function Add(){
 
                             <form onSubmit={onAlbumCreate}>
                                 <div className="row">
-                                    <h1>General Info</h1>
+                                    <h1>General Info:</h1>
                                     <div className="col-sm-12">
                                         <input className="contactus" placeholder="Name" type="text" name="name" />
                                     </div>
@@ -77,10 +82,10 @@ export default function Add(){
                                     <h1>Tracklist:</h1>
 
                                     <div className={styles.tracklistContainer}>
-                                        <input className={styles.tracklist} placeholder="Tracklist" type="text" name="tracklist" />
+                                        <textarea className={styles.tracklist} placeholder="Tracklist" type="text" name="tracklist" />
                                     </div>
                                     
-                                    <h1>Additional Info</h1>
+                                    <h1>Additional Info:</h1>
 
                                     <div className="col-sm-12">
                                         <textarea className={styles.description} placeholder="Description" type="text" name="description" />
@@ -89,7 +94,7 @@ export default function Add(){
                                         <input className="contactus" placeholder="Composer/Artist" type="text" name="composer-artist" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="imageURL" type="text" name="imageURL" />
+                                        <input className="contactus" placeholder="Album Art" type="text" name="imageURL" />
                                     </div>
                                     <div className="col-sm-12">
                                         <button className="send">Add the album</button>

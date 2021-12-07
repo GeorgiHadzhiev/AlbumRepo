@@ -11,15 +11,13 @@
 }
 .tracklistContainer{
 
-    /* position: relative;
-    right: 20px; */
-
     flex: 0 0 100%;
     max-width: 100%;
 
 }
 .tracklist{
 
+    height: 237px;
     border: #b1b0b0 solid 1px;
     padding: 12px 19px;
     margin-bottom: 20px;
