@@ -1,5 +1,3 @@
-
-
 export const request = (url) => {
 
     return fetch(url).then(responseHandler)
@@ -17,7 +15,7 @@ async function responseHandler(res){
     }
     else{
 
-        throw jsonData.message;
+        throw jsonData
 
     }
 
