@@ -3,7 +3,7 @@ import { useState,useEffect,useContext } from "react";
 import {AuthContext} from '../../contexts/AuthContext.js'
 
 import albumService from '../../services/albumService.js'
-import ConfirmDialog from '../Common/ConfirmDialog'
+import DeletionDialog from '../Common/DeletionDialog'
 
 export default function Details(){
 
@@ -51,7 +51,7 @@ export default function Details(){
     return(
 
         <>
-            <ConfirmDialog show={showDeleteDialog} onClose={() => setShowDeleteDialog(false)} onDelete={onDeleteHandler} />
+            <DeletionDialog show={showDeleteDialog} onClose={() => setShowDeleteDialog(false)} onDelete={onDeleteHandler} />
             <section id="details-page" className="details">
                 <div className="album-information">
                     <h3>Name: {album.name}</h3>
