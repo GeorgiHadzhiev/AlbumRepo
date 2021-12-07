@@ -21,7 +21,6 @@ export default function Main(){
             
             <AnimatePresence>
 
-
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/register" element={<Register />} />
@@ -34,7 +33,6 @@ export default function Main(){
         
                 </Routes>
             
-
             </AnimatePresence>
             <Footer />
             
