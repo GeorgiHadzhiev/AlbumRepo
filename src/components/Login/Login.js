@@ -24,9 +24,6 @@ export default function Login(){
 
             login(res);
         
-            let closeButtonEl = document.querySelector('.btn-close')
-            closeButtonEl.click()
-
     
         })
         .catch(err =>{
@@ -66,7 +63,7 @@ export default function Login(){
                         </div>
                 </div>
                 <div className="dropdown mt-3">
-                    <input type="submit" className="btn btn-success" value="Login"/>
+                    <input type="submit" className="btn btn-success" data-bs-dismiss="offcanvas" value="Login"/>
                 </div>
             </div>
 
