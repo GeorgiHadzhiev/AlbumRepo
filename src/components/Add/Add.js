@@ -41,7 +41,7 @@ export default function Add(){
             imageURL,
 
         }, user.accessToken)
-        .then(res => {
+        .then(() => {
 
             navigate('/catalog')
 
