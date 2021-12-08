@@ -39,7 +39,7 @@ export default function Add(){
         },user.accessToken)
         .then(res => {
 
-            navigate('/catalog')
+            navigate('/myProfile')
 
         })
 
@@ -69,32 +69,42 @@ export default function Add(){
                             <form method="POST" onSubmit={onAlbumCreate}>
                                 <div className="row">
                                     <h1>General Info:</h1>
+                                    <h4>Album Name: </h4>
                                     <div className="col-sm-12">
                                         <input className="contactus" placeholder="Name" type="text" name="name" />
                                     </div>
+                                    <h4>Date of Release: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" type="date" name="date" />
+                                        <input className="contactus" placeholder="Date of release" type="date" name="date" />
                                     </div>
+                                    <h4>Number of Tracks: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" type="number" placeholder="Number of tracks" name="number-of-songs" />
+                                        <input className="contactus" type="number" placeholder="№" name="number-of-songs" />
+                                    </div>
+                                    <h4>Genre: </h4>
+                                    <div className="col-sm-12">
+                                        <input className="contactus" placeholder="..." type="text" name="name" />
                                     </div>
 
                                     <h1>Tracklist:</h1>
 
                                     <div className={styles.tracklistContainer}>
-                                        <textarea className={styles.tracklist} placeholder="Tracklist" type="text" name="tracklist" />
+                                        <textarea className={styles.tracklist} placeholder="..." type="text" name="tracklist" />
                                     </div>
                                     
                                     <h1>Additional Info:</h1>
 
+                                    <h4>Description: </h4>
                                     <div className="col-sm-12">
-                                        <textarea className={styles.description} placeholder="Description" type="text" name="description" />
+                                        <textarea className={styles.description} placeholder="..." type="text" name="description" />
                                     </div>
+                                    <h4>Composer/Artist: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Composer/Artist" type="text" name="composer-artist" />
+                                        <input className="contactus" placeholder="..." type="text" name="composer-artist" />
                                     </div>
+                                    <h4>Album Art: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Album Art" type="text" name="imageURL" />
+                                        <input className="contactus" placeholder="imageURL" type="text" name="imageURL" />
                                     </div>
                                     <div className="col-sm-12">
                                         <button className="send">Add the album</button>
