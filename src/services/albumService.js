@@ -55,6 +55,27 @@ const deletePost = async (id,token) =>{
 
 }
 
+const update = async (id,data,token) => {
+
+    let res = await fetch(`${baseUrl}/albums/${id}`, {
+
+        method: 'PUT',
+        headers:{
+
+            'content-type': 'application/json',
+            'X-Authorization': token,
+            
+        },
+        body: JSON.stringify({...data,likes: [],dislikes: []})
+
+    })
+
+    let result = await res.json()
+
+    return result
+
+}
+
 const like = (albumId,album,token) =>{
 
     return fetch(`${baseUrl}/albums/${albumId}`,{
@@ -80,6 +101,7 @@ const albumService = {
     getOne,
     create,
     deletePost,
+    update,
     like,
 
 }
