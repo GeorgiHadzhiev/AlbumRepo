@@ -1,5 +1,5 @@
 import { useParams,useNavigate,Link } from "react-router-dom"
-import { useState,useEffect,useContext } from "react";
+import { useState,useContext } from "react";
 
 import {AuthContext} from '../../contexts/AuthContext.js'
 import albumService from '../../services/albumService.js'

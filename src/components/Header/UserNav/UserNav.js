@@ -8,7 +8,8 @@ export default function UserNav({email}){
     const [open,setOpen] = useState(false);
 
     function onClickHandler(e){
-   
+
+        console.log('clicked')
         setOpen(!open)
     
     }
@@ -21,7 +22,7 @@ export default function UserNav({email}){
             <img src="/icons/avatar5.png" alt="Avatar" className="avatar" onClick={onClickHandler} />
             <span id="welcomeMessage">Welcome, {email}</span>
 
-            {open && <DropDown setOpen={setOpen}  />}
+            {open && <DropDown open={open} setOpen={setOpen} />}
 
         </div>
 
