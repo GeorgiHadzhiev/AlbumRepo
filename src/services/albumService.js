@@ -26,7 +26,7 @@ const create = async (data,token) =>{
             'X-Authorization': token,
             
         },
-        body: JSON.stringify({...data,likes: [],dislikes: []})
+        body: JSON.stringify({...data})
 
     })
 
