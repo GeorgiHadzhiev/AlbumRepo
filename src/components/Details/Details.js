@@ -1,44 +1,33 @@
 import { useParams,useNavigate,Link } from "react-router-dom"
-import { useState,useContext } from "react";
+import { useContext } from "react";
 
 import {AuthContext} from '../../contexts/AuthContext.js'
 import albumService from '../../services/albumService.js'
 import useAlbumState from "../../hooks/useAlbumState.js";
 import DeletionDialog from '../Common/DeletionDialog'
 
-export default function Details(){
 
+export default function Details(){
+    
     let navigate = useNavigate();
     
     const {user} = useContext(AuthContext);
     const {albumId} = useParams();
     const [album,setAlbum] = useAlbumState(albumId);
-    const [showDeleteDialog,setShowDeleteDialog] = useState(false);
-
-
-   
-
+    
     function onDeleteHandler(e){
-
+        
         e.preventDefault();
 
         albumService.deletePost(albumId,user.accessToken)
         .then(() =>{
 
-            setShowDeleteDialog(false)
             navigate('/catalog');
 
         })
 
     }
 
-    function deleteClickHandler(e){
-
-        e.preventDefault();
-
-        setShowDeleteDialog(true)
-
-    }
 
     function likeButtonClick(e){
 
@@ -71,7 +60,7 @@ export default function Details(){
     return(
 
         <>
-            <DeletionDialog show={showDeleteDialog} onClose={() => setShowDeleteDialog(false)} onDelete={onDeleteHandler} />
+            <DeletionDialog className="deleteModal" onDelete={onDeleteHandler} />
             <section id="details-page" className="details">
                 <div className="album-information">
                     <h3>Name: {album.name}</h3>
@@ -101,7 +90,7 @@ export default function Details(){
                             ?(
                                 <>
                                     <Link className="button" to={`/edit/${albumId}`}>Edit</Link>
-                                    <button className="button" onClick={deleteClickHandler}>Delete</button>
+                                    <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Delete</button>
                                 </>
 
                             )

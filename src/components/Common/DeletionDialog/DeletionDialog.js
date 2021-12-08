@@ -1,23 +1,26 @@
-import {Modal,Button} from 'react-bootstrap';
 
-export default function ConfirmDialog({show,onClose,onDelete}){
+export default function DeletionDialog({onDelete}){
+
 
     return(
 
-        <Modal show={show} onHide={onClose}>
-            <Modal.Header closeButton>
-                <Modal.Title>Delete The Album?</Modal.Title>
-            </Modal.Header>
-
-            <Modal.Body>
-                <p>Are you sure you want to permenantly delete this Album?</p>
-            </Modal.Body>
-
-            <Modal.Footer>
-                <Button variant="secondary" onClick={onClose}>No</Button>
-                <Button variant="primary" onClick={onDelete}>Yes</Button>
-            </Modal.Footer>
-        </Modal>
+        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div className="modal-body">
+                    ...
+                </div>
+                <div className="modal-footer">
+                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={onDelete} >Save changes</button>
+                </div>
+                </div>
+            </div>
+        </div>
 
     );
 

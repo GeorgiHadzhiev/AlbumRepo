@@ -27,8 +27,7 @@ export default function Add(){
         let personnel = formData.get('personnel')
         let imageURL = formData.get('imageURL')
         
-        console.log(user.accessToken)
-
+        
         albumService.create({
 
             name,
