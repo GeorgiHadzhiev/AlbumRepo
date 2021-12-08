@@ -15,31 +15,36 @@ export default function Add(){
 
         e.preventDefault()
 
-
         let formData = new FormData(e.currentTarget);
 
         let name = formData.get('name')
+        let composerArtist = formData.get('composer-artist')
         let date = formData.get('date')
         let numberOfSongs = formData.get('number-of-songs')
+        let genre = formData.get('genre')
         let tracklist = formData.get('tracklist')
         let description = formData.get('description')
-        let composerArtist = formData.get('composer-artist')
+        let personnel = formData.get('personnel')
         let imageURL = formData.get('imageURL')
+        
+        console.log(user.accessToken)
 
         albumService.create({
 
             name,
+            composerArtist,
             date,
             numberOfSongs,
+            genre,
             tracklist,
             description,
-            composerArtist,
+            personnel,
             imageURL,
 
-        },user.accessToken)
+        }, user.accessToken)
         .then(res => {
 
-            navigate('/myProfile')
+            navigate('/catalog')
 
         })
 
@@ -66,12 +71,16 @@ export default function Add(){
                     <div className=" col-md-6 offset-md-3">
                         <div className="address">
 
-                            <form method="POST" onSubmit={onAlbumCreate}>
+                            <form onSubmit={onAlbumCreate} method="POST">
                                 <div className="row">
                                     <h1>General Info:</h1>
                                     <h4>Album Name: </h4>
                                     <div className="col-sm-12">
                                         <input className="contactus" placeholder="Name" type="text" name="name" />
+                                    </div>
+                                    <h4>Composer/Artist: </h4>
+                                    <div className="col-sm-12">
+                                        <input className="contactus" placeholder="Name" type="text" name="composer-artist" />
                                     </div>
                                     <h4>Date of Release: </h4>
                                     <div className="col-sm-12">
@@ -83,7 +92,7 @@ export default function Add(){
                                     </div>
                                     <h4>Genre: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="..." type="text" name="name" />
+                                        <input className="contactus" placeholder="..." type="text" name="genre" />
                                     </div>
 
                                     <h1>Tracklist:</h1>
@@ -98,9 +107,9 @@ export default function Add(){
                                     <div className="col-sm-12">
                                         <textarea className={styles.description} placeholder="..." type="text" name="description" />
                                     </div>
-                                    <h4>Composer/Artist: </h4>
+                                    <h4>Personnel: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="..." type="text" name="composer-artist" />
+                                        <textarea className={styles.description} placeholder="..." type="text" name="personnel" />
                                     </div>
                                     <h4>Album Art: </h4>
                                     <div className="col-sm-12">

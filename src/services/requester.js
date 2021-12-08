@@ -15,7 +15,7 @@ async function responseHandler(res){
     }
     else{
 
-        throw jsonData
+        throw jsonData.message
 
     }
 

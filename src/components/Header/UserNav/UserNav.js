@@ -9,7 +9,6 @@ export default function UserNav({email}){
 
     function onClickHandler(e){
 
-        console.log('clicked')
         setOpen(!open)
     
     }
