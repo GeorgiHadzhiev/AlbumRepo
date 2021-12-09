@@ -83,7 +83,7 @@ export default function Add(){
                                     </div>
                                     <h4>Date of Release: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Date of release" type="date" name="date" />
+                                        <input className="contactus" placeholder="year" type="number" name="date" />
                                     </div>
                                     <h4>Number of Tracks: </h4>
                                     <div className="col-sm-12">
