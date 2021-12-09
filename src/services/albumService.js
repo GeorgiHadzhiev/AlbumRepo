@@ -76,9 +76,9 @@ const update = async (id,data,token) => {
 
 }
 
-const like = (albumId,likedUser,token) =>{
+const like = async (albumId,likedUser,token) =>{
 
-    return fetch(`${baseUrl}/albums/like/${albumId}`,{
+    let res = await fetch(`${baseUrl}/albums/like/${albumId}`,{
 
         method: 'PATCH',
         headers: {
@@ -90,13 +90,24 @@ const like = (albumId,likedUser,token) =>{
         body: JSON.stringify(likedUser)
 
     })
-    .then(res => res.json());
+    let result = await res.json()
+
+    if(res.ok){
+
+        return result;
+
+    }
+    else{
+
+        throw result.message;
+
+    }
 
 }
 
-const dislike = (albumId,dislikedUser,token) =>{
+const dislike = async (albumId,dislikedUser,token) =>{
 
-    return fetch(`${baseUrl}/albums/dislike/${albumId}`,{
+    let res = await fetch(`${baseUrl}/albums/dislike/${albumId}`,{
 
         method: 'PATCH',
         headers: {
@@ -108,7 +119,19 @@ const dislike = (albumId,dislikedUser,token) =>{
         body: JSON.stringify(dislikedUser)
 
     })
-    .then(res => res.json());
+    let result = await res.json()
+
+    if(res.ok){
+
+        return result;
+
+    }
+    else{
+
+        throw result.message;
+
+    }
+    
 
 }
 

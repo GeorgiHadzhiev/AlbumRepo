@@ -33,11 +33,15 @@ export default function Details(){
 
         let likedUser = user._id
         
-
         albumService.like(album._id,{likedUser}, user.accessToken)
-        .then(res =>{
+        .then(() =>{
 
-            console.log(res)
+            return;
+
+        })
+        .catch(err =>{
+
+            console.log(err);
 
         })
 
@@ -51,7 +55,12 @@ export default function Details(){
         albumService.dislike(album._id,{dislikedUser}, user.accessToken)
         .then(res =>{
 
-            console.log(res)
+            return;
+
+        })
+        .catch(err =>{
+
+            console.log(err);
 
         })
 
