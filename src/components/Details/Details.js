@@ -13,7 +13,7 @@ export default function Details(){
     
     const {user} = useContext(AuthContext);
     const {albumId} = useParams();
-    const [album,setAlbum] = useAlbumState(albumId);
+    const [album] = useAlbumState(albumId);
     
     function onDeleteHandler(e){
         
