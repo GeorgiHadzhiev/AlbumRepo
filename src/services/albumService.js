@@ -66,7 +66,7 @@ const update = async (id,data,token) => {
             'X-Authorization': token,
             
         },
-        body: JSON.stringify({...data,likes: [],dislikes: []})
+        body: JSON.stringify({...data})
 
     })
 
@@ -76,9 +76,9 @@ const update = async (id,data,token) => {
 
 }
 
-const like = (albumId,album,token) =>{
+const like = (albumId,likedUser,token) =>{
 
-    return fetch(`${baseUrl}/albums/${albumId}`,{
+    return fetch(`${baseUrl}/albums/like/${albumId}`,{
 
         method: 'PATCH',
         headers: {
@@ -87,14 +87,32 @@ const like = (albumId,album,token) =>{
             'X-authorization': token,
 
         },
-        body: JSON.stringify(album)
+        body: JSON.stringify(likedUser)
 
     })
     .then(res => res.json());
 
 }
 
-const dislike = (albumId,album,token) =>{
+const dislike = (albumId,dislikedUser,token) =>{
+
+    return fetch(`${baseUrl}/albums/dislike/${albumId}`,{
+
+        method: 'PATCH',
+        headers: {
+
+            'content-type': 'application/json',
+            'X-authorization': token,
+
+        },
+        body: JSON.stringify(dislikedUser)
+
+    })
+    .then(res => res.json());
+
+}
+
+const removeLike = (albumId,album,token) =>{
 
     return fetch(`${baseUrl}/albums/${albumId}`,{
 
@@ -121,6 +139,7 @@ const albumService = {
     deletePost,
     update,
     like,
+    removeLike,
     dislike,
 
 }

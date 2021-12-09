@@ -31,25 +31,13 @@ export default function Details(){
 
     function likeButtonClick(e){
 
-        if(album.likes.includes(user._id)){
+        let likedUser = user._id
+        
 
-            console.log('User Already liked');
-            return; 
-
-        }
-
-        let likes = [...album.likes,user._id]
-        let likedAlbum = {...album,likes}
-
-        albumService.like(album._id,likedAlbum, user.accessToken)
+        albumService.like(album._id,{likedUser}, user.accessToken)
         .then(res =>{
 
-            setAlbum(state=>({
-
-                ...state,
-                likes,
-    
-            }))
+            console.log(res)
 
         })
 
@@ -57,25 +45,13 @@ export default function Details(){
 
     function dislikeBUttonClick(e){
 
-        if(album.dislikes.includes(user._id)){
 
-            console.log('User Already disliked');
-            return; 
+        let dislikedUser = user._id
 
-        }
-
-        let dislikes = [...album.dislikes,user._id]
-        let dislikedAlbum = {...album,dislikes}
-
-        albumService.dislike(album._id,dislikedAlbum, user.accessToken)
+        albumService.dislike(album._id,{dislikedUser}, user.accessToken)
         .then(res =>{
 
-            setAlbum(state=>({
-
-                ...state,
-                dislikes,
-    
-            }))
+            console.log(res)
 
         })
 
