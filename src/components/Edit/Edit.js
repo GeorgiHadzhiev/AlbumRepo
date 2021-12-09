@@ -96,10 +96,16 @@ export default function Edit(){
                                     </div>
                                     <span className={styles.error}>{errors.name}</span>
                                     <div className="col-sm-12">
-                                        <input className="contactus" type="date" name="date" defaultValue={album.date} />
+                                        <input className="contactus" defaultValue={album.composerArtist} type="text" name="composer-artist" />
+                                    </div>
+                                    <div className="col-sm-12">
+                                        <input className="contactus" type="number" name="date" defaultValue={album.date} />
                                     </div>
                                     <div className="col-sm-12">
                                         <input className="contactus" type="number" defaultValue={album.numberOfSongs} name="number-of-songs" />
+                                    </div>
+                                    <div className="col-sm-12">
+                                        <input className="contactus" placeholder="..." type="text" name="genre" />
                                     </div>
 
                                     <h1>Tracklist:</h1>
@@ -112,9 +118,6 @@ export default function Edit(){
 
                                     <div className="col-sm-12">
                                         <textarea className={styles.description} defaultValue={album.description} type="text" name="description" />
-                                    </div>
-                                    <div className="col-sm-12">
-                                        <input className="contactus" defaultValue={album.composerArtist} type="text" name="composer-artist" />
                                     </div>
                                     <div className="col-sm-12">
                                         <input className="contactus" defaultValue={album.imageURL} type="text" name="imageURL" />
