@@ -88,42 +88,52 @@ export default function Edit(){
                         <div className="address">
 
                             <form method="PUT" onSubmit={albumEditSubmitHandler}>
-                                <div className="row" >
+                            <div className="row">
                                     <h1>General Info:</h1>
-
-                                    <div className="col-sm-12" >
-                                        <input className="contactus" style={{borderColor: errors.name ? 'red' : 'green'}} defaultValue={album.name} type="text" name="name" onBlur={nameChangeHandler} />
+                                    <h4>Album Name: </h4>
+                                    <div className="col-sm-12">
+                                        <input className="contactus" style={{borderColor: errors.name ? 'red' : 'green'}} onBlur={nameChangeHandler} defaultValue={album.name} type="text" name="name" />
                                     </div>
                                     <span className={styles.error}>{errors.name}</span>
+                                    <h4>Composer/Artist: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" defaultValue={album.composerArtist} type="text" name="composer-artist" />
+                                        <input className="contactus" placeholder="Name" type="text" defaultValue={album.composerArtist} name="composer-artist" />
                                     </div>
+                                    <h4>Date of Release: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" type="number" name="date" defaultValue={album.date} />
+                                        <input className="contactus" placeholder="year" type="number" defaultValue={album.date} name="date" />
                                     </div>
+                                    <h4>Number of Tracks: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" type="number" defaultValue={album.numberOfSongs} name="number-of-songs" />
+                                        <input className="contactus" type="number" placeholder="№" defaultValue={album.numberOfSongs} name="number-of-songs" />
                                     </div>
+                                    <h4>Genre: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="..." type="text" name="genre" />
+                                        <input className="contactus" placeholder="..." type="text" defaultValue={album.genre} name="genre" />
                                     </div>
 
                                     <h1>Tracklist:</h1>
 
                                     <div className={styles.tracklistContainer}>
-                                        <textarea className={styles.tracklist} defaultValue={album.tracklist} type="text" name="tracklist" />
+                                        <textarea className={styles.tracklist} placeholder="..." type="text" defaultValue={album.tracklist} name="tracklist" />
                                     </div>
                                     
                                     <h1>Additional Info:</h1>
 
+                                    <h4>Description: </h4>
                                     <div className="col-sm-12">
-                                        <textarea className={styles.description} defaultValue={album.description} type="text" name="description" />
+                                        <textarea className={styles.description} placeholder="..." type="text" defaultValue={album.description} name="description" />
+                                    </div>
+                                    <h4>Personnel: </h4>
+                                    <div className="col-sm-12">
+                                        <textarea className={styles.description} placeholder="..." type="text" defaultValue={album.personnel} name="personnel" />
+                                    </div>
+                                    <h4>Album Art: </h4>
+                                    <div className="col-sm-12">
+                                        <input className="contactus" placeholder="imageURL" type="text" defaultValue={album.imageURL} name="imageURL" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <input className="contactus" defaultValue={album.imageURL} type="text" name="imageURL" />
-                                    </div>
-                                    <div className="col-sm-12">
-                                        <button className="send">Edit</button>
+                                        <button className="send">Add the album</button>
                                     </div>
                                 </div>
                             </form>
