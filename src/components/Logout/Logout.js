@@ -20,7 +20,7 @@ export default function Logout(){
         
         },)
 
-    },[])
+    })
 
     return <Loader />;
 
