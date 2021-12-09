@@ -85,7 +85,7 @@ export default function Details(){
 
                     <div className="actions">
 
-                        {user._id && (user._id === album.ownerId
+                        {user._id && (user._id === album._ownerId
                         
                             ?(
                                 <>
