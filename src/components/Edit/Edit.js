@@ -21,22 +21,26 @@ export default function Edit(){
         let formData = new FormData(e.currentTarget);
 
         let name = formData.get('name')
+        let composerArtist = formData.get('composer-artist')
         let date = formData.get('date')
         let numberOfSongs = formData.get('number-of-songs')
+        let genre = formData.get('genre')
         let tracklist = formData.get('tracklist')
         let description = formData.get('description')
-        let composerArtist = formData.get('composer-artist')
+        let personnel = formData.get('personnel')
         let imageURL = formData.get('imageURL')
 
         albumService.update(albumId,{
 
             name,
+            composerArtist,
             date,
             numberOfSongs,
+            genre,
             tracklist,
             description,
-            composerArtist,
-            imageURL
+            personnel,
+            imageURL,
 
 
         },user.accessToken)
