@@ -44,12 +44,36 @@ export default function Details(){
         albumService.like(album._id,likedAlbum, user.accessToken)
         .then(res =>{
 
-            console.log(res)
-
             setAlbum(state=>({
 
                 ...state,
                 likes,
+    
+            }))
+
+        })
+
+    }
+
+    function dislikeBUttonClick(e){
+
+        if(album.dislikes.includes(user._id)){
+
+            console.log('User Already disliked');
+            return; 
+
+        }
+
+        let dislikes = [...album.dislikes,user._id]
+        let dislikedAlbum = {...album,dislikes}
+
+        albumService.dislike(album._id,dislikedAlbum, user.accessToken)
+        .then(res =>{
+
+            setAlbum(state=>({
+
+                ...state,
+                dislikes,
     
             }))
 
@@ -97,7 +121,7 @@ export default function Details(){
                             :(
                                 <>
                                     <button onClick={likeButtonClick}>Like</button>
-                                    <button>Disslike</button>
+                                    <button onClick={dislikeBUttonClick}>Disslike</button>
                                 </>
                             )
 

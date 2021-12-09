@@ -80,7 +80,25 @@ const like = (albumId,album,token) =>{
 
     return fetch(`${baseUrl}/albums/${albumId}`,{
 
-        method: 'PUT',
+        method: 'PATCH',
+        headers: {
+
+            'content-type': 'application/json',
+            'X-authorization': token,
+
+        },
+        body: JSON.stringify(album)
+
+    })
+    .then(res => res.json());
+
+}
+
+const dislike = (albumId,album,token) =>{
+
+    return fetch(`${baseUrl}/albums/${albumId}`,{
+
+        method: 'PATCH',
         headers: {
 
             'content-type': 'application/json',
@@ -103,6 +121,7 @@ const albumService = {
     deletePost,
     update,
     like,
+    dislike,
 
 }
 
