@@ -133,7 +133,7 @@ export default function Edit(){
                                         <input className="contactus" placeholder="imageURL" type="text" defaultValue={album.imageURL} name="imageURL" />
                                     </div>
                                     <div className="col-sm-12">
-                                        <button className="send">Add the album</button>
+                                        <button className="send">Edit</button>
                                     </div>
                                 </div>
                             </form>
