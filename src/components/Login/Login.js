@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useContext } from 'react';
+import { useContext,useState,useRef } from 'react';
 
 import './Login.css'
 import { AuthContext } from '../../contexts/AuthContext.js';
@@ -8,6 +8,8 @@ import authService from '../../services/authService.js'
 export default function Login(){
 
     const {login} = useContext(AuthContext);
+    const [formErrors,setFormErrors] = useState({email: null,password: null});
+    let closeRef = useRef(null);
     const navigate = useNavigate();
 
     const onLoginHandler = (e) =>{
@@ -23,7 +25,7 @@ export default function Login(){
         .then(res => {
 
             login(res);
-        
+            closeRef.current.click()
     
         })
         .catch(err =>{
@@ -31,6 +33,18 @@ export default function Login(){
             console.log(err);
 
         })
+
+    }
+
+    function emailErrorHandler(e){
+
+
+
+    }
+
+    function passwordErrorHandler(e){
+
+
 
     }
 
@@ -50,20 +64,20 @@ export default function Login(){
 
 
           <form id="loginForm" onSubmit={onLoginHandler}>
-
-            <div className="offcanvas-body">
+                <div ref={closeRef} typeof="button" data-bs-dismiss="offcanvas" aria-label="Close"></div>
+            <div className="offcanvas-body" aria-label="Close">
                 <div>
                         <div className="form-floating mb-3">
-                            <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" name="email" />
+                            <input onBlur={emailErrorHandler} type="email" className="form-control" id="floatingInput" placeholder="name@example.com" name="email" />
                             <label htmlFor="floatingInput">Email address</label>
                         </div>
                         <div className="form-floating">
-                            <input type="password" className="form-control" id="floatingPassword" placeholder="Password"name="password" />
+                            <input onBlur={passwordErrorHandler} type="password" className="form-control" id="floatingPassword" placeholder="Password"name="password" />
                             <label htmlFor="floatingPassword">Password</label>
                         </div>
                 </div>
                 <div className="dropdown mt-3">
-                    <input type="submit" className="btn btn-success" data-bs-dismiss="offcanvas" value="Login"/>
+                    <input type="submit" className="btn btn-success" value="Login"/>
                 </div>
             </div>
 
