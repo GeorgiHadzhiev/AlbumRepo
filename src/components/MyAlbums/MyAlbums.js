@@ -31,7 +31,7 @@ function MyAlbums(){
     return(
         
         <section id="myProfilePage">
-            <h1>All Albums</h1>
+            <h1>My Albums</h1>
             {albums.length > 0
             
                 ?(
