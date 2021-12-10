@@ -17,7 +17,7 @@ const getOne = async (id) => {
 
 const getAllOwn =  async (authToken) => {
 
-    let res = await fetch('http://localhost:3030/myProfile', {
+    let res = await fetch('http://localhost:3030/myAlbums', {
 
         headers:{
 

@@ -4,7 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import Header from '../Header';
 import Home from '../Home';
 import Register from '../Register';
-import MyProfile from '../MyProfile';
+import MyAlbums from '../MyAlbums';
 import Catalog from '../Catalog';
 import Add from '../Add';
 import Details from '../Details';
@@ -26,7 +26,7 @@ export default function Main(){
                     <Route path="/" element={<Home />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/catalog" element={<Catalog />} />
-                    <Route path="/myProfile" element={<MyProfile />} />
+                    <Route path="/MyAlbums" element={<MyAlbums />} />
                     <Route path="/add" element={<Add />} />
                     <Route path="/details/:albumId" element={<Details />} />
                     <Route path="/edit/:albumId" element={<Edit />} />

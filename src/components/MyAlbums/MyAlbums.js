@@ -5,7 +5,7 @@ import albumService from '../../services/albumService.js';
 import { AuthContext } from '../../contexts/AuthContext.js';
 import AlbumCard from '../Catalog/AlbumCard'
 
-function MyProfile(){
+function MyAlbums(){
 
     const {user} = useContext(AuthContext);
     const [albums,setAlbums] = useState([]);
@@ -53,4 +53,4 @@ function MyProfile(){
         
 }
 
-export default isAuth(MyProfile);
+export default isAuth(MyAlbums);
