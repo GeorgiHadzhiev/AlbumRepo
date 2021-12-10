@@ -91,7 +91,7 @@ export default function Register(){
     
         let formEmailValue = e.target.value;
         
-        let emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+        let emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g
      
         if(formEmailValue.length <= 0){
 
