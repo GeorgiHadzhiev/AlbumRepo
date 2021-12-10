@@ -15,6 +15,25 @@ const getOne = async (id) => {
 
 }
 
+const getAllOwn =  async (authToken) => {
+
+    let res = await fetch('http://localhost:3030/myProfile', {
+
+        headers:{
+
+            'content-type': 'application/json',
+            'X-Authorization': authToken,
+            
+        }
+
+
+    })
+
+    let result = await res.json();
+    return result
+
+}
+
 const create = async (data,token) =>{
 
     let res = await fetch(`${baseUrl}/albums`, {
@@ -158,6 +177,7 @@ const albumService = {
 
     getAll,
     getOne,
+    getAllOwn,
     create,
     deletePost,
     update,
