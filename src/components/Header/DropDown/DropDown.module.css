@@ -48,7 +48,7 @@
 
 .dropDownOptionsInnetContainer{
 
-
+  
   position: relative;
   top: 27px;
   left: -22px;
@@ -63,7 +63,7 @@
 .dropDownItemAdd{
   position: absolute;
   top: 45px;
-  left: 96px;
+  left: 100px;
   color: white;
   text-decoration: none;
   height: 50px;
@@ -83,7 +83,7 @@
 
   position: absolute;
   top: 95px;
-  left: 121px;
+  left: 124px;
   color: white;
   text-decoration: none;
   height: 50px;
