@@ -2,7 +2,7 @@ import './Register.css'
 
 import authService from '../../services/authService.js';
 import { AuthContext } from '../../contexts/AuthContext.js'
-import { useContext,useState } from 'react';
+import { useContext,useState, useRef } from 'react';
 import { useNavigate } from 'react-router';
 
 
@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router';
 export default function Register(){
 
     let navigate = useNavigate()
+    let alertRef = useRef(null)
 
     const [formErrors,setFormErrors] = useState({firstName: null, lastName: null, email: null, password: null, repeatPassword: null});
     const [originalPassword,setOriginalPassword] = useState('');
@@ -42,16 +43,16 @@ export default function Register(){
             
             return setTimeout( () => {
                 
-                let alertDiv = document.querySelector('.blankFormAlert')
+                let alertDiv = alertRef.current
                 alertDiv.classList.toggle('fade')
 
                 setTimeout(() => {
 
                     return setBlankForm(false)
 
-                },1500)
+                },500)
                 
-            },4500)
+            },1500)
             
 
             
@@ -224,7 +225,7 @@ export default function Register(){
                             <form method="POST" onSubmit={onSubmitHandlerRegister}>
 
                                 
-                                {blankForm && <div className="alert alert-danger blankFormAlert" role="alert">Please fill out all the blank spaces</div> }
+                                {blankForm && <div ref={alertRef} className="alert alert-danger blankFormAlert" role="alert">Please fill out all the blank spaces</div> }
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <input className="contactus" style={{borderColor: formErrors.firstName ? 'red' : 'green'}} onBlur={firstNameErrorHandler} placeholder="First Name" type="text" name="firstName" />
