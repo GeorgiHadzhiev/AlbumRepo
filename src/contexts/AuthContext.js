@@ -7,6 +7,8 @@ const initialState = {
 
     _id: '',
     email: '',
+    firstName: '',
+    lastName: '',
     accessToken: '',
   
 }

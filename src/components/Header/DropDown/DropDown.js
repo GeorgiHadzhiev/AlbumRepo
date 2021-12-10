@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import styles from './DropDown.module.css'
 
 
-export default function DropDown({open,setOpen}){
+export default function DropDown({open,setOpen,firstName,lastName}){
 
     let dropDownRef = useRef(null);
 
@@ -32,10 +32,16 @@ export default function DropDown({open,setOpen}){
     return( 
 
         <div ref={dropDownRef} className={styles.dropDown} >
+            <p className={styles.dropDownName}>{firstName} {lastName}</p>
 
-            <Link to="/myAlbums" className={styles.dropDownItemProfile} onClick={onClickHandler}  >My Albums</Link>
-            <Link to="/add" className={styles.dropDownItemAdd} onClick={onClickHandler} >Add an Album</Link>
-            <Link to="/logout" className={styles.dropDownItemLogout} onClick={onClickHandler} >Logout</Link>
+            <div className={styles.dropDownOptionsInnetContainer}>
+
+                <Link to="/myAlbums" className={styles.dropDownItemProfile} onClick={onClickHandler}  >My Albums</Link>
+                <Link to="/add" className={styles.dropDownItemAdd} onClick={onClickHandler} >Add an Album</Link>
+                <Link to="/logout" className={styles.dropDownItemLogout} onClick={onClickHandler} >Logout</Link>
+
+            </div>
+
             
         </div>
 
