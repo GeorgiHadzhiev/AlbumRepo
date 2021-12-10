@@ -130,7 +130,7 @@ export default function Login(){
                 <button className="registerLinkButton" data-bs-dismiss="offcanvas" aria-label="Close" onClick={onClickHandler}>Don't Have an account?<br/>Click here to register!</button>
             </div>
             <div className="col-sm-12 loginDetailsErrorMessage" >
-            <div className="alert alert-danger blankFormAlert" role="alert">{formErrors.wrongDetails}</div>
+                <div className="alert alert-danger blankFormAlert" role="alert">{formErrors.wrongDetails}</div>
             </div>
 
       </div>

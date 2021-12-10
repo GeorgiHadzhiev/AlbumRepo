@@ -26,3 +26,11 @@
     width: 100%;
 
 }
+
+.error {
+
+    color: crimson;
+    position: relative;
+    top: -17px;
+
+}

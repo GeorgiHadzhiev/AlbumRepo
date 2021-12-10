@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import { useContext } from 'react';
+import { useContext,useState } from 'react';
 
 import {AuthContext} from '../../contexts/AuthContext.js'
 import albumService from '../../services/albumService.js'
@@ -8,12 +8,23 @@ import styles from './Add.module.css'
 export default function Add(){
 
     const {user} = useContext(AuthContext);
+    const [formErrors,setFormErrors] = useState({});
     let navigate  = useNavigate();
 
 
     function onAlbumCreate(e){
 
         e.preventDefault()
+
+        if(Object.values(formErrors).some(x => x !== null)){
+
+            let invalidFiled = Object.entries(formErrors).filter(x => x[1] !== null)[0]
+            let invalidEl = document.getElementsByName(invalidFiled[0])[0]
+
+            return invalidEl.scrollIntoView(invalidEl)
+
+        }
+    
 
         let formData = new FormData(e.currentTarget);
 
@@ -49,6 +60,25 @@ export default function Add(){
 
     }
 
+    function formErrorHanlder(e){
+    
+        let formValue = e.target.value;
+        let formName = e.target.name
+
+     
+        if(formValue.length <= 0){
+
+            setFormErrors(formErrors => ({...formErrors, [formName]: `${formName} cannot be blank`}))
+
+        }
+        else{
+
+            setFormErrors(formErrors => ({...formErrors, [formName]: null}))
+
+        }
+
+    }
+
 
     return(
 
@@ -72,50 +102,66 @@ export default function Add(){
 
                             <form onSubmit={onAlbumCreate} method="POST">
                                 <div className="row">
-                                    <h1>General Info:</h1>
+                                <h1>General Info:</h1>
                                     <h4>Album Name: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Name" type="text" name="name" />
+                                        <input className="contactus" style={{borderColor: formErrors.name ? 'red' : 'green'}} onBlur={formErrorHanlder} placeholder="Name" type="text" name="name" />
                                     </div>
+                                    <span className={styles.error}>{formErrors.name}</span>
+
                                     <h4>Composer/Artist: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="Name" type="text" name="composer-artist" />
+                                        <input className="contactus" style={{borderColor: formErrors.artist ? 'red' : 'green'}} onBlur={formErrorHanlder} placeholder="Name" type="text"  name="artist" />
                                     </div>
+                                    <span className={styles.error}>{formErrors.artist}</span>
+
                                     <h4>Date of Release: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="year" type="number" name="date" />
+                                        <input className="contactus" style={{borderColor: formErrors.date ? 'red' : 'green'}} onBlur={formErrorHanlder} placeholder="year" type="number"  name="date" />
                                     </div>
+                                    <span className={styles.error}>{formErrors.date}</span>
+
                                     <h4>Number of Tracks: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" type="number" placeholder="№" name="number-of-songs" />
+                                        <input className="contactus" style={{borderColor: formErrors.tracks ? 'red' : 'green'}}  onBlur={formErrorHanlder} type="number" placeholder="№"name="tracks" />
                                     </div>
+                                    <span className={styles.error}>{formErrors.tracks}</span>
+                                    
                                     <h4>Genre: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="..." type="text" name="genre" />
+                                        <input className="contactus"  style={{borderColor: formErrors.genre ? 'red' : 'green'}} onBlur={formErrorHanlder} placeholder="..." type="text"  name="genre" />
                                     </div>
+                                    <span className={styles.error}>{formErrors.genre}</span>
 
                                     <h1>Tracklist:</h1>
 
                                     <div className={styles.tracklistContainer}>
-                                        <textarea className={styles.tracklist} placeholder="..." type="text" name="tracklist" />
+                                        <textarea className={styles.tracklist}  style={{borderColor: formErrors.tracklist ? 'red' : 'green'}} onBlur={formErrorHanlder} placeholder="..." type="text"  name="tracklist" />
                                     </div>
+                                    <span className={styles.error}>{formErrors.tracklist}</span>
                                     
                                     <h1>Additional Info:</h1>
 
                                     <h4>Description: </h4>
                                     <div className="col-sm-12">
-                                        <textarea className={styles.description} placeholder="..." type="text" name="description" />
+                                        <textarea className={styles.description} style={{borderColor: formErrors.description ? 'red' : 'green'}}  onBlur={formErrorHanlder} placeholder="..." type="text"  name="description" />
                                     </div>
+                                    <span className={styles.error}>{formErrors.description}</span>
+
                                     <h4>Personnel: </h4>
                                     <div className="col-sm-12">
-                                        <textarea className={styles.description} placeholder="..." type="text" name="personnel" />
+                                        <textarea className={styles.description} style={{borderColor: formErrors.personnel ? 'red' : 'green'}} onBlur={formErrorHanlder} placeholder="..." type="text"  name="personnel" />
                                     </div>
+                                    <span className={styles.error}>{formErrors.personnel}</span>
+
                                     <h4>Album Art: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" placeholder="imageURL" type="text" name="imageURL" />
+                                        <input className="contactus" style={{borderColor: formErrors.picture ? 'red' : 'green'}} onBlur={formErrorHanlder} placeholder="imageURL" type="text"  name="picture" />
                                     </div>
+                                    <span className={styles.error}>{formErrors.picture}</span>
+
                                     <div className="col-sm-12">
-                                        <button className="send">Add the album</button>
+                                        <button className="send">Edit</button>
                                     </div>
                                 </div>
                             </form>
