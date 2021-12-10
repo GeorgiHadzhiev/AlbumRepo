@@ -171,7 +171,7 @@ export default function Edit(){
                                     <span className={styles.error}>{formErrors.picture}</span>
 
                                     <div className="col-sm-12">
-                                        <button className="send">Edit</button>
+                                        <button className="send">Add the Album</button>
                                     </div>
                                 </div>
                             </form>

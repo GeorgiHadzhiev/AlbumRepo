@@ -9,6 +9,7 @@ export default function Add(){
 
     const {user} = useContext(AuthContext);
     const [formErrors,setFormErrors] = useState({});
+    const [blankForm,setBlankForm] = useState(false)
     let navigate  = useNavigate();
 
 
@@ -29,14 +30,31 @@ export default function Add(){
         let formData = new FormData(e.currentTarget);
 
         let name = formData.get('name')
-        let composerArtist = formData.get('composer-artist')
+        let composerArtist = formData.get('artist')
         let date = formData.get('date')
-        let numberOfSongs = formData.get('number-of-songs')
+        let numberOfSongs = formData.get('tracks')
         let genre = formData.get('genre')
         let tracklist = formData.get('tracklist')
         let description = formData.get('description')
         let personnel = formData.get('personnel')
-        let imageURL = formData.get('imageURL')
+        let imageURL = formData.get('picture')
+
+
+        if(!name || !composerArtist || !date || !numberOfSongs || !genre || !tracklist || !description || !personnel || !imageURL){
+
+            e.currentTarget.scrollIntoView();
+
+            setBlankForm(true);
+
+            return setTimeout(() =>{
+
+                setBlankForm(false)
+
+            },4000)
+
+
+             
+        }
         
         
         albumService.create({
@@ -100,6 +118,8 @@ export default function Add(){
                     <div className=" col-md-6 offset-md-3">
                         <div className="address">
 
+                        {blankForm && <div className="alert alert-danger blankFormAlert" role="alert">Please fill out all the blank spaces</div> }
+
                             <form onSubmit={onAlbumCreate} method="POST">
                                 <div className="row">
                                 <h1>General Info:</h1>
@@ -161,7 +181,7 @@ export default function Add(){
                                     <span className={styles.error}>{formErrors.picture}</span>
 
                                     <div className="col-sm-12">
-                                        <button className="send">Edit</button>
+                                        <button className="send">Add the Album</button>
                                     </div>
                                 </div>
                             </form>
