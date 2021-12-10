@@ -61,3 +61,16 @@
     top: -17px;
 
 }
+.blankFormAlert{
+
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.3s ease-in-out;
+
+}
+.blankFormAlert.fade{
+
+    opacity: 0;
+
+}
+

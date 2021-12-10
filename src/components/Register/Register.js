@@ -5,23 +5,59 @@ import { AuthContext } from '../../contexts/AuthContext.js'
 import { useContext,useState } from 'react';
 import { useNavigate } from 'react-router';
 
+
+
 export default function Register(){
 
     let navigate = useNavigate()
 
     const [formErrors,setFormErrors] = useState({firstName: null, lastName: null, email: null, password: null, repeatPassword: null});
     const [originalPassword,setOriginalPassword] = useState('');
+    const [blankForm,setBlankForm] = useState(false)
     const {login} = useContext(AuthContext);
 
     function onSubmitHandlerRegister(e){
 
         e.preventDefault();
+
+        if(Object.values(formErrors).some(x => x !== null)){
+
+            return;
+
+        }
+
+
         let formData = new FormData(e.currentTarget);
 
         let firstName = formData.get('firstName');
         let lastName = formData.get('lastName');
         let email = formData.get('email');
         let password = formData.get('password');
+
+        if(!firstName || !lastName || !email || !password){
+
+            
+            setBlankForm(true)
+            
+            
+            return setTimeout( () => {
+                
+                let alertDiv = document.querySelector('.blankFormAlert')
+                alertDiv.classList.toggle('fade')
+
+                setTimeout(() => {
+
+                    return setBlankForm(false)
+
+                },1500)
+                
+            },4500)
+            
+
+            
+            
+        }
+        
 
     
         authService.register(firstName.toUpperCase(),lastName.toUpperCase(),email,password)
@@ -186,6 +222,9 @@ export default function Register(){
                         <div className="address">
 
                             <form method="POST" onSubmit={onSubmitHandlerRegister}>
+
+                                
+                                {blankForm && <div className="alert alert-danger blankFormAlert" role="alert">Please fill out all the blank spaces</div> }
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <input className="contactus" style={{borderColor: formErrors.firstName ? 'red' : 'green'}} onBlur={firstNameErrorHandler} placeholder="First Name" type="text" name="firstName" />
