@@ -25,7 +25,7 @@ export default function OurServices(){
                         <div className={styles.forBox}>
                             <i><img src="icons/icon3.png" alt="icon" className={styles.servicePic}/></i>
                             <h3 className={styles.serviceTitle}>Ratings And Opinions</h3>
-                            <p className={styles.serviceText}>Leave comments, likes and disslikes. Share your opinion with the rest of the community</p>
+                            <p className={styles.serviceText}>Leave likes and disslikes. Share your opinion with the rest of the community</p>
                         </div>
                     </div>
 
