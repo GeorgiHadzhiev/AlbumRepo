@@ -4,7 +4,7 @@ import DropDown from "../DropDown";
 import { AuthContext } from '../../../contexts/AuthContext.js';
 
 
-export default function UserNav({firstName,lastName,email}){
+export default function UserNav(){
 
     const {user} = useContext(AuthContext)
     const [open,setOpen] = useState(false);
