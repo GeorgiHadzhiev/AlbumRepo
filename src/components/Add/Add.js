@@ -3,9 +3,10 @@ import { useContext,useState } from 'react';
 
 import {AuthContext} from '../../contexts/AuthContext.js'
 import albumService from '../../services/albumService.js'
+import { isAuth } from '../../HOCs/isAuth.js'
 import styles from './Add.module.css'
 
-export default function Add(){
+function Add(){
 
     const {user} = useContext(AuthContext);
     const [formErrors,setFormErrors] = useState({});
@@ -39,7 +40,6 @@ export default function Add(){
         let personnel = formData.get('personnel')
         let imageURL = formData.get('picture')
 
-
         if(!name || !composerArtist || !date || !numberOfSongs || !genre || !tracklist || !description || !personnel || !imageURL){
 
             e.currentTarget.scrollIntoView();
@@ -52,10 +52,7 @@ export default function Add(){
 
             },4000)
 
-
-             
         }
-        
         
         albumService.create({
 
@@ -195,3 +192,5 @@ export default function Add(){
     )
 
 }
+
+export default isAuth(Add);

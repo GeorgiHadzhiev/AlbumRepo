@@ -1,1 +1,1 @@
-export {default} from './MyAlbums.js'
+export { default } from './MyAlbums.js'
