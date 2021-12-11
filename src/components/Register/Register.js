@@ -2,7 +2,7 @@ import './Register.css'
 
 import authService from '../../services/authService.js';
 import { AuthContext } from '../../contexts/AuthContext.js'
-import { useContext,useState} from 'react';
+import { useContext,useState,useRef} from 'react';
 import { useNavigate } from 'react-router';
 
 
@@ -10,46 +10,42 @@ import { useNavigate } from 'react-router';
 export default function Register(){
 
     let navigate = useNavigate()
+    let errorRef = useRef(null)
     
-
     const [formErrors,setFormErrors] = useState({firstName: null, lastName: null, email: null, password: null, repeatPassword: null});
     const [originalPassword,setOriginalPassword] = useState('');
-    const [blankForm,setBlankForm] = useState(false)
     const {login} = useContext(AuthContext);
-
+    
     function onSubmitHandlerRegister(e){
-
+        
         e.preventDefault();
-
-        if(Object.values(formErrors).some(x => x !== null)){
-
-            return;
-
-        }
-
-
         let formData = new FormData(e.currentTarget);
-
+        
         let firstName = formData.get('firstName');
         let lastName = formData.get('lastName');
         let email = formData.get('email');
         let password = formData.get('password');
-
+        
+        if(Object.values(formErrors).some(x => x !== null)){
+            
+            return;
+            
+        }
+        
         if(!firstName || !lastName || !email || !password){
 
+            let blankFormErrorDiv = errorRef.current
+            blankFormErrorDiv.classList.add('fade')
             
-            setBlankForm(true)
-
             return setTimeout(() =>{
-
-                setBlankForm(false)
-
+                
+                blankFormErrorDiv.classList.remove('fade')
+                
+                
             },4000)
             
         }
         
-
-    
         authService.register(firstName.toUpperCase(),lastName.toUpperCase(),email,password)
         .then(res => {
 
@@ -214,7 +210,7 @@ export default function Register(){
                             <form method="POST" onSubmit={onSubmitHandlerRegister}>
 
                                 
-                                {blankForm && <div className="alert alert-danger blankFormAlert" role="alert">Please fill out all the blank spaces</div> }
+                                <div ref={errorRef} className="alert alert-danger blankFormAlert" role="alert">Please fill out all the blank spaces</div>
                                 <div className="row">
                                     <div className="col-sm-12">
                                         <input className="contactus" style={{borderColor: formErrors.firstName ? 'red' : 'green'}} onBlur={firstNameErrorHandler} placeholder="First Name" type="text" name="firstName" />
