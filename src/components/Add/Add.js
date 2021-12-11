@@ -3,7 +3,7 @@ import { useContext,useState } from 'react';
 
 import {AuthContext} from '../../contexts/AuthContext.js'
 import albumService from '../../services/albumService.js'
-import { isAuth } from '../../HOCs/isAuth.js'
+import { routeGuard } from '../../HOCs/routeGuard.js'
 import styles from './Add.module.css'
 
 function Add(){
@@ -193,4 +193,4 @@ function Add(){
 
 }
 
-export default isAuth(Add);
+export default routeGuard(Add);

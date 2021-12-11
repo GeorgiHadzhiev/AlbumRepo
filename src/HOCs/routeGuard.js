@@ -4,7 +4,7 @@ import {AuthContext} from '../contexts/AuthContext.js'
 import { Navigate } from 'react-router';
 
 
-export const isAuth = (Component) =>{
+export const routeGuard = (Component) =>{
 
     const WrapperComponent = (props) => {
 
