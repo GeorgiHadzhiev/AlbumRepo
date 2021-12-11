@@ -1,6 +1,6 @@
 # AlbumRepo
 
-This is the AlbumRepo, a site meant as a repository for music records both old and new. Each logged in user will be able to add albums to the repo, and other users can rate those albums. 
+This is the AlbumRepo, a site meant as a repository for music records both old and new. Each logged in user will be able to add albums to the repo and other users will be able to rate those albums. 
 
 ## How to start
 
