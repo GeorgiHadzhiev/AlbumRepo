@@ -1,5 +1,5 @@
 import { useState,useContext } from 'react';
-import { useParams,useNavigate,Navigate } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 
 import styles from './Edit.module.css'
 import albumService from '../../services/albumService.js'
@@ -16,14 +16,6 @@ function Edit(){
     const [album] = useAlbumState(albumId);
     const navigate = useNavigate();
 
-    
-    // if(user._id !== album._ownerId && album._ownerId !== undefined){
-        
-    //     console.log(album._ownerId)
-    //     return <Navigate to={'/'} />
-
-    // }
-    
     function albumEditSubmitHandler(e){
         
         e.preventDefault();
@@ -37,8 +29,6 @@ function Edit(){
 
         }
     
-
-
         let formData = new FormData(e.currentTarget);
 
         let name = formData.get('name')
