@@ -1,13 +1,14 @@
 import { useState,useContext } from 'react';
-import { useParams,useNavigate } from 'react-router-dom';
+import { useParams,useNavigate,Navigate } from 'react-router-dom';
 
 import styles from './Edit.module.css'
 import albumService from '../../services/albumService.js'
 import useAlbumState from '../../hooks/useAlbumState.js';
 import { AuthContext } from '../../contexts/AuthContext.js';
+import { routeGuardEdit } from '../../HOCs/routeGuard.js'
 
 
-export default function Edit(){
+function Edit(){
 
     const {albumId} = useParams();
     const {user} = useContext(AuthContext);
@@ -15,9 +16,16 @@ export default function Edit(){
     const [album] = useAlbumState(albumId);
     const navigate = useNavigate();
 
+    
+    // if(user._id !== album._ownerId && album._ownerId !== undefined){
+        
+    //     console.log(album._ownerId)
+    //     return <Navigate to={'/'} />
 
+    // }
+    
     function albumEditSubmitHandler(e){
-
+        
         e.preventDefault();
 
         if(Object.values(formErrors).some(x => x !== null)){
@@ -185,3 +193,5 @@ export default function Edit(){
     )
 
 }
+
+export default routeGuardEdit(Edit);

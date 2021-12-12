@@ -63,7 +63,18 @@ router.post('/login', async (req, res) => {
 
 router.get('/logout', async (req, res) => {
     
-    res.json({ok: true});
+    try{
+
+        
+        res.json({ok: true});
+
+    }
+    catch(err){
+
+        res.status(400).json({message: 'Something went wrong in the logut section in the userController'})
+
+    }
+
 
 })
 
