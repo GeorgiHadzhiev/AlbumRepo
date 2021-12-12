@@ -27,11 +27,11 @@ export const routeGuardEdit = (Component) =>{
     const WrapperComponent = (props) => {
         
         const {user} = useContext(AuthContext);
-        // const albumId = useParams();
-        // const [album] = useAlbumState(albumId);
+        const {albumId} = useParams();
+        const [album] = useAlbumState(albumId);
         
         
-        return user._id
+        return user._id === album._ownerId || album._ownerId === undefined
         ? <Component {...props} />
         : <Navigate to="/" />
         
