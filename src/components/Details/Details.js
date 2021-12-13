@@ -33,7 +33,7 @@ export default function Details(){
 
         let likedUser = user._id
         
-        albumService.like(album._id,{likedUser}, user.accessToken)
+        albumService.like(album._id,{likedUser})
         .then(() =>{
 
             return;

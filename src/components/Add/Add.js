@@ -1,14 +1,12 @@
 import { useNavigate } from 'react-router';
-import { useContext,useState } from 'react';
+import { useState } from 'react';
 
-import {AuthContext} from '../../contexts/AuthContext.js'
 import albumService from '../../services/albumService.js'
 import { routeGuard } from '../../HOCs/routeGuard.js'
 import styles from './Add.module.css'
 
 function Add(){
 
-    const {user} = useContext(AuthContext);
     const [formErrors,setFormErrors] = useState({});
     const [blankForm,setBlankForm] = useState(false)
     let navigate  = useNavigate();

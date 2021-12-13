@@ -40,6 +40,36 @@ export const request = async (method,url,data,own) => {
         })
 
     }
+    else if(method === 'DELETE'){
+
+        result = fetch(url, {
+
+            method: 'DELETE',
+            headers:{
+    
+                'X-Authorization': token,
+                
+            },
+    
+        })
+
+    }
+    else if(method === 'PACH'){
+
+        result = fetch(url ,{
+
+            method,
+            headers: {
+    
+                'content-type': 'application/json',
+                'X-authorization': token,
+    
+            },
+            body: JSON.stringify(data)
+    
+        })
+
+    }
     else{
 
 
@@ -107,3 +137,5 @@ function getToken(){
 export const get = request.bind(null, 'GET');
 export const post = request.bind(null, 'POST');
 export const put = request.bind(null, 'PUT');
+export const patch = request.bind(null, 'PATCH');
+export const deletePost = request.bind(null, 'DELETE');
