@@ -27,7 +27,7 @@ function Add(){
 
         }
     
-
+        let albumData = Object.fromEntries(new FormData(e.currentTarget))
         let formData = new FormData(e.currentTarget);
 
         let name = formData.get('name')
@@ -54,19 +54,7 @@ function Add(){
 
         }
         
-        albumService.create({
-
-            name,
-            artist,
-            date,
-            tracks,
-            genre,
-            tracklist,
-            description,
-            personnel,
-            picture,
-
-        }, user.accessToken)
+        albumService.create(albumData)
         .then(() => {
 
             navigate('/catalog')

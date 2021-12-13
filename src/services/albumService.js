@@ -5,55 +5,11 @@ const baseUrl = 'http://localhost:3030/data'
 
 const getAll = () => request.get(`${baseUrl}/albums`)
     
+const getOne = async (albumId) => request.get(`${baseUrl}/albums/${albumId}`)
 
-const getOne = async (id) => {
+const getAllOwn =  async () => request.get('http://localhost:3030/myAlbums',undefined,true)
 
-    let res = await fetch(`${baseUrl}/albums/${id}`)
-    let album = await res.json();
-
-    return album
-
-}
-
-const getAllOwn =  async (authToken) => {
-
-    let res = await fetch('http://localhost:3030/myAlbums', {
-
-        headers:{
-
-            'content-type': 'application/json',
-            'X-Authorization': authToken,
-            
-        }
-
-
-    })
-
-    let result = await res.json();
-    return result
-
-}
-
-const create = async (data,token) =>{
-
-    let res = await fetch(`${baseUrl}/albums`, {
-
-        method: 'POST',
-        headers:{
-
-            'content-type': 'application/json',
-            'X-Authorization': token,
-            
-        },
-        body: JSON.stringify({...data})
-
-    })
-
-    let result = await res.json()
-
-    return result
-
-}
+const create = async (albumData) => request.post(`${baseUrl}/albums`,albumData)
 
 const deletePost = async (id,token) =>{
 

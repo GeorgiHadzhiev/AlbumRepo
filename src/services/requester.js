@@ -1,15 +1,47 @@
-export const request = async (method,url,data) => {
+export const request = async (method,url,data,own) => {
 
     let result = null;
+    let token = getToken();
 
-    if(method === 'GET'){
+    if(own){
+
+        result = fetch(url, {
+
+            headers:{
+
+                'content-type': 'application/json',
+                'X-Authorization': token,
+                
+            },
+            
+
+        });
+
+
+    }
+    else if(method === 'GET'){
 
         result = fetch(url);
 
     }
+    else if(method === 'POST'){
+
+        result = fetch(url, {
+
+            method,
+            headers:{
+    
+                'content-type': 'application/json',
+                'X-Authorization': token,
+                
+            },
+            body: JSON.stringify(data)
+    
+        })
+
+    }
     else{
 
-        let token = getToken();
 
         result = fetch(url, {
 
@@ -36,7 +68,7 @@ async function responseHandler(res){
 
     if(res.ok){
 
-        return Object.values(jsonData);
+        return jsonData
 
     }
     else{
@@ -73,4 +105,5 @@ function getToken(){
 }
 
 export const get = request.bind(null, 'GET');
+export const post = request.bind(null, 'POST');
 export const put = request.bind(null, 'PUT');
