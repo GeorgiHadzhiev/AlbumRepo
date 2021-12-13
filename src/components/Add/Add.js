@@ -31,16 +31,16 @@ function Add(){
         let formData = new FormData(e.currentTarget);
 
         let name = formData.get('name')
-        let composerArtist = formData.get('artist')
+        let artist = formData.get('artist')
         let date = formData.get('date')
-        let numberOfSongs = formData.get('tracks')
+        let tracks = formData.get('tracks')
         let genre = formData.get('genre')
         let tracklist = formData.get('tracklist')
         let description = formData.get('description')
         let personnel = formData.get('personnel')
-        let imageURL = formData.get('picture')
+        let picture = formData.get('picture')
 
-        if(!name || !composerArtist || !date || !numberOfSongs || !genre || !tracklist || !description || !personnel || !imageURL){
+        if(!name || !artist || !date || !tracks || !genre || !tracklist || !description || !personnel || !picture){
 
             e.currentTarget.scrollIntoView();
 
@@ -57,14 +57,14 @@ function Add(){
         albumService.create({
 
             name,
-            composerArtist,
+            composerArtist: artist,
             date,
-            numberOfSongs,
+            numberOfSongs: tracks,
             genre,
             tracklist,
             description,
             personnel,
-            imageURL,
+            imageURL: picture,
 
         }, user.accessToken)
         .then(() => {

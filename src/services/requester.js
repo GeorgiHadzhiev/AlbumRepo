@@ -59,8 +59,9 @@ function getToken(){
             throw errorMEssage;
 
         }
+        let userData = JSON.parse(user)
 
-        return user.accessToken;
+        return userData.accessToken;
 
     }
     catch(err){

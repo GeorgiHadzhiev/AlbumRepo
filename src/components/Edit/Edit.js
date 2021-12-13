@@ -30,6 +30,7 @@ function Edit(){
         }
     
         let formData = new FormData(e.currentTarget);
+        let albumData = Object.fromEntries(new FormData(e.currentTarget))
 
         let name = formData.get('name')
         let composerArtist = formData.get('artist')
@@ -42,20 +43,7 @@ function Edit(){
         let imageURL = formData.get('picture')
 
 
-        albumService.update(albumId,{
-
-            name,
-            composerArtist,
-            date,
-            numberOfSongs,
-            genre,
-            tracklist,
-            description,
-            personnel,
-            imageURL,
-
-
-        },user.accessToken)
+        albumService.update(albumId,albumData)
         .then(() =>{
 
             navigate(`/details/${albumId}`)
@@ -169,7 +157,7 @@ function Edit(){
                                     <span className={styles.error}>{formErrors.picture}</span>
 
                                     <div className="col-sm-12">
-                                        <button className="send">Add the Album</button>
+                                        <button className="send">Edit the Album</button>
                                     </div>
                                 </div>
                             </form>

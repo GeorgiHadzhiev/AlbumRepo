@@ -74,26 +74,8 @@ const deletePost = async (id,token) =>{
 
 }
 
-const update = async (id,data,token) => {
+const update = async (albumId,albumData) => request.put(`${baseUrl}/albums/${albumId}`, albumData)
 
-    let res = await fetch(`${baseUrl}/albums/${id}`, {
-
-        method: 'PUT',
-        headers:{
-
-            'content-type': 'application/json',
-            'X-Authorization': token,
-            
-        },
-        body: JSON.stringify({...data})
-
-    })
-
-    let result = await res.json()
-
-    return result
-
-}
 
 const like = async (albumId,likedUser,token) =>{
 
