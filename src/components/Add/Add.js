@@ -57,14 +57,14 @@ function Add(){
         albumService.create({
 
             name,
-            composerArtist: artist,
+            artist,
             date,
-            numberOfSongs: tracks,
+            tracks,
             genre,
             tracklist,
             description,
             personnel,
-            imageURL: picture,
+            picture,
 
         }, user.accessToken)
         .then(() => {

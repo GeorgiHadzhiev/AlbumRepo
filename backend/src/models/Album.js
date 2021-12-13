@@ -7,7 +7,7 @@ const albumSchema = new mongoose.Schema({
         type: String
 
     },
-    composerArtist:{
+    artist:{
 
         type: String
 
@@ -17,7 +17,7 @@ const albumSchema = new mongoose.Schema({
         type: Number
 
     },
-    numberOfSongs:{
+    tracks:{
 
         type: Number
 
@@ -42,7 +42,7 @@ const albumSchema = new mongoose.Schema({
         type: String
 
     },
-    imageURL:{
+    picture:{
 
         type: String
 

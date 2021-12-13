@@ -107,7 +107,7 @@ function Edit(){
 
                                     <h4>Composer/Artist: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" style={{borderColor: formErrors.artist ? 'red' : 'green'}} onBlur={formErrorHanlder} placeholder="Name" type="text" defaultValue={album.composerArtist} name="artist" />
+                                        <input className="contactus" style={{borderColor: formErrors.artist ? 'red' : 'green'}} onBlur={formErrorHanlder} placeholder="Name" type="text" defaultValue={album.artist} name="artist" />
                                     </div>
                                     <span className={styles.error}>{formErrors.artist}</span>
 
@@ -119,7 +119,7 @@ function Edit(){
 
                                     <h4>Number of Tracks: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" style={{borderColor: formErrors.tracks ? 'red' : 'green'}}  onBlur={formErrorHanlder} type="number" placeholder="№" defaultValue={album.numberOfSongs} name="tracks" />
+                                        <input className="contactus" style={{borderColor: formErrors.tracks ? 'red' : 'green'}}  onBlur={formErrorHanlder} type="number" placeholder="№" defaultValue={album.tracks} name="tracks" />
                                     </div>
                                     <span className={styles.error}>{formErrors.tracks}</span>
                                     
@@ -152,7 +152,7 @@ function Edit(){
 
                                     <h4>Album Art: </h4>
                                     <div className="col-sm-12">
-                                        <input className="contactus" style={{borderColor: formErrors.picture ? 'red' : 'green'}} onBlur={formErrorHanlder} placeholder="imageURL" type="text" defaultValue={album.imageURL} name="picture" />
+                                        <input className="contactus" style={{borderColor: formErrors.picture ? 'red' : 'green'}} onBlur={formErrorHanlder} placeholder="imageURL" type="text" defaultValue={album.picture} name="picture" />
                                     </div>
                                     <span className={styles.error}>{formErrors.picture}</span>
 

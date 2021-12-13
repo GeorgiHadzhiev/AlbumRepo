@@ -73,10 +73,10 @@ export default function Details(){
             <section id="details-page" className="details">
                 <div className="album-information">
                     <h3>Name: {album.name}</h3>
-                    <h4>Artist: {album.composerArtist}</h4>
+                    <h4>Artist: {album.artist}</h4>
                     <p className="year">Year: {album.date}</p>
-                    <p className="img"><img src={album.imageURL} alt="broken" /></p>
-                    <p className="numberOfSongs">Number of tracks: {album.numberOfSongs}</p>
+                    <p className="img"><img src={album.picture} alt="broken" /></p>
+                    <p className="numberOfSongs">Number of tracks: {album.tracks}</p>
                     <p className="genre">Genre: {album.genre}</p>
                     <div className="album-description">
                         <h3>Description:</h3>
