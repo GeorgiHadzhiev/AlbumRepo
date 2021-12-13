@@ -1,4 +1,4 @@
-export const request = (method,url,data) => {
+export const request = async (method,url,data) => {
 
     let result = null;
 
@@ -55,7 +55,8 @@ function getToken(){
 
         if(!user){
 
-            throw {message: 'You must be loged in for this action'}
+            const errorMEssage = {message: 'You must be logged in for this action'}
+            throw errorMEssage;
 
         }
 

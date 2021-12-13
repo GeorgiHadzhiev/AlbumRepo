@@ -1,9 +1,9 @@
-import {request} from './requester.js'
+import * as request from './requester.js'
 
 const baseUrl = 'http://localhost:3030/data'
 
 
-const getAll = () => request(`${baseUrl}/albums`)
+const getAll = () => request.get(`${baseUrl}/albums`)
     
 
 const getOne = async (id) => {
