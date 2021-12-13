@@ -1,17 +1,15 @@
-import { useState,useContext } from 'react';
+import { useState } from 'react';
 import { useParams,useNavigate } from 'react-router-dom';
 
 import styles from './Edit.module.css'
 import albumService from '../../services/albumService.js'
 import useAlbumState from '../../hooks/useAlbumState.js';
-import { AuthContext } from '../../contexts/AuthContext.js';
 import { routeGuardEdit } from '../../HOCs/routeGuard.js'
 
 
 function Edit(){
 
     const {albumId} = useParams();
-    const {user} = useContext(AuthContext);
     const [formErrors,setFormErrors] = useState({});
     const [album] = useAlbumState(albumId);
     const navigate = useNavigate();
@@ -29,19 +27,7 @@ function Edit(){
 
         }
     
-        let formData = new FormData(e.currentTarget);
         let albumData = Object.fromEntries(new FormData(e.currentTarget))
-
-        let name = formData.get('name')
-        let composerArtist = formData.get('artist')
-        let date = formData.get('date')
-        let numberOfSongs = formData.get('tracks')
-        let genre = formData.get('genre')
-        let tracklist = formData.get('tracklist')
-        let description = formData.get('description')
-        let personnel = formData.get('personnel')
-        let imageURL = formData.get('picture')
-
 
         albumService.update(albumId,albumData)
         .then(() =>{
