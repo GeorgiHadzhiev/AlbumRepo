@@ -9,7 +9,6 @@ import './Add.css'
 function Add(){
 
     const [formErrors,setFormErrors] = useState({});
-    let errors = Object.values(formErrors);
     let errorRef = useRef(null);
     let navigate  = useNavigate();
 
@@ -20,7 +19,7 @@ function Add(){
         let albumData = Object.fromEntries(new FormData(e.currentTarget))
         
         
-        if(errors.some(x => x !== null)){
+        if(Object.values(formErrors).some(x => x !== null)){
             
             errorHelper.addAlbumErrorScroller(formErrors);
             return;
