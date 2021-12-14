@@ -9,42 +9,32 @@ import './Add.css'
 function Add(){
 
     const [formErrors,setFormErrors] = useState({});
-    let errorRef = useRef(null)
+    let errors = Object.values(formErrors);
+    let errorRef = useRef(null);
     let navigate  = useNavigate();
 
 
     function onAlbumCreate(e){
 
         e.preventDefault()
-
-        if(Object.values(formErrors).some(x => x !== null)){
-
-            let invalidFiled = Object.entries(formErrors).filter(x => x[1] !== null)[0]
-            let invalidEl = document.getElementsByName(invalidFiled[0])[0]
-
-            return invalidEl.scrollIntoView(invalidEl)
-
-        }
-    
         let albumData = Object.fromEntries(new FormData(e.currentTarget))
-        let formData = new FormData(e.currentTarget);
+        
+        
+        if(errors.some(x => x !== null)){
+            
+            errorHelper.addAlbumErrorScroller(formErrors);
+            return;
+            
+        }
         
         if(Object.values(albumData).some(x => x === '')){
 
-            window.scrollTo(1,0);
-
             let blankFormErrorDiv = errorRef.current
-            blankFormErrorDiv.classList.add('fade');
-            
-            return setTimeout(() =>{
-                
-                blankFormErrorDiv.classList.remove('fade');
-                
-                
-            },4000)
-            
+            errorHelper.addAlbumBlankScroller(blankFormErrorDiv);
+            return;
 
         }
+        
         
         albumService.create(albumData)
         .then(() => {

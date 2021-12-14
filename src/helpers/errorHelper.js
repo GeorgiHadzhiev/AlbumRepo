@@ -118,6 +118,29 @@ function formAlbumChecker(albumDataArray,formName,errorState){
 
 }
 
+function addAlbumErrorScroller(errorObject){
+
+    let invalidFiled = Object.entries(errorObject).filter(x => x[1] !== null)[0]
+    let invalidEl = document.getElementsByName(invalidFiled[0])[0]
+
+    return invalidEl.scrollIntoView(invalidEl)
+ 
+}
+
+function addAlbumBlankScroller(blankFormErrorDiv){
+
+    window.scrollTo(1,0);
+    blankFormErrorDiv.classList.add('fade');
+        
+    return setTimeout(() =>{
+            
+        blankFormErrorDiv.classList.remove('fade');
+            
+            
+    },4000)
+        
+}
+
 const errorHelper ={
 
     firstNameChecker,
@@ -126,6 +149,8 @@ const errorHelper ={
     passwordChecker,
     repeatPasswordChecker,
     formAlbumChecker,
+    addAlbumErrorScroller,
+    addAlbumBlankScroller,
 
 
 }
