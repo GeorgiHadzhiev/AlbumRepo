@@ -15,6 +15,7 @@ import Add from './components/Add';
 import Details from './components/Details';
 import Edit from './components/Edit';
 import Logout from './components/Logout';
+import ErrorPage from './components/404';
 import Footer from './components/Footer';
 
 
@@ -38,6 +39,7 @@ function App() {
                 <Route path="/details/:albumId" element={<Details />} />
                 <Route path="/edit/:albumId" element={<Edit />} />
                 <Route path="/logout" element={<Logout />} />
+                <Route path="*" element={<ErrorPage />} />
 
     
             </Routes>
