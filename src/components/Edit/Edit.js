@@ -5,7 +5,7 @@ import styles from './Edit.module.css'
 import albumService from '../../services/albumService.js'
 import useAlbumState from '../../hooks/useAlbumState.js';
 import errorHelper from '../../helpers/errorHelper.js';
-import { routeGuardEdit } from '../../HOCs/routeGuard.js'
+import { routeGuardOwner } from '../../HOCs/routeGuard.js'
 
 
 function Edit(){
@@ -143,4 +143,4 @@ function Edit(){
 
 }
 
-export default routeGuardEdit(Edit);
+export default routeGuardOwner(Edit);

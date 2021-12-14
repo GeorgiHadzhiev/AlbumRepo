@@ -1,6 +1,6 @@
 import { useState,useEffect,useContext } from 'react';
 
-import { routeGuard } from '../../HOCs/routeGuard.js'
+import { routeGuardIfNotUser } from '../../HOCs/routeGuard.js'
 import albumService from '../../services/albumService.js';
 import { AuthContext } from '../../contexts/AuthContext.js';
 import AlbumCard from '../Catalog/AlbumCard'
@@ -53,4 +53,4 @@ function MyAlbums(){
         
 }
 
-export default routeGuard(MyAlbums);
+export default routeGuardIfNotUser(MyAlbums);

@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router';
 import { useState,useRef } from 'react';
 
 import albumService from '../../services/albumService.js'
-import { routeGuard } from '../../HOCs/routeGuard.js'
+import { routeGuardIfNotUser } from '../../HOCs/routeGuard.js'
 import errorHelper from '../../helpers/errorHelper.js';
 import './Add.css'
 
@@ -151,4 +151,4 @@ function Add(){
 
 }
 
-export default routeGuard(Add);
+export default routeGuardIfNotUser(Add);

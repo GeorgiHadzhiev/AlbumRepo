@@ -5,13 +5,13 @@ import {AuthContext} from '../contexts/AuthContext.js'
 import useAlbumState from '../hooks/useAlbumState.js';
 
 
-export const routeGuard = (Component) =>{
+export const routeGuardIfNotUser = (Component) =>{
     
     const WrapperComponent = (props) => {
         
         const {user} = useContext(AuthContext);
         
-        
+
         return user._id
         ? <Component {...props} />
         : <Navigate to="/" />
@@ -22,7 +22,25 @@ export const routeGuard = (Component) =>{
     
 };
 
-export const routeGuardEdit = (Component) =>{
+export const routeGuardIfUser = (Component) =>{
+    
+    const WrapperComponent = (props) => {
+        
+        const {user} = useContext(AuthContext);
+        
+        
+        return !user._id
+        ? <Component {...props} />
+        : <Navigate to="/" />
+        
+    }
+    
+    return WrapperComponent;
+    
+};
+
+
+export const routeGuardOwner = (Component) =>{
     
     const WrapperComponent = (props) => {
         

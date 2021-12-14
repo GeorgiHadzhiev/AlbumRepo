@@ -5,10 +5,11 @@ import { AuthContext } from '../../contexts/AuthContext.js'
 import { useContext,useState,useRef} from 'react';
 import { useNavigate } from 'react-router';
 import errorHelper from '../../helpers/errorHelper.js'
+import { routeGuardIfUser } from '../../HOCs/routeGuard.js'
 
 
 
-export default function Register(){
+function Register(){
 
     let navigate = useNavigate()
     let errorRef = useRef(null)
@@ -163,3 +164,5 @@ export default function Register(){
     )
 
 }
+
+export default routeGuardIfUser(Register);
