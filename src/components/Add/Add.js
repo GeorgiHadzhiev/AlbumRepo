@@ -3,6 +3,7 @@ import { useState,useRef } from 'react';
 
 import albumService from '../../services/albumService.js'
 import { routeGuard } from '../../HOCs/routeGuard.js'
+import errorHelper from '../../helpers/errorHelper.js';
 import './Add.css'
 
 function Add(){
@@ -27,18 +28,8 @@ function Add(){
     
         let albumData = Object.fromEntries(new FormData(e.currentTarget))
         let formData = new FormData(e.currentTarget);
-
-        let name = formData.get('name')
-        let artist = formData.get('artist')
-        let date = formData.get('date')
-        let tracks = formData.get('tracks')
-        let genre = formData.get('genre')
-        let tracklist = formData.get('tracklist')
-        let description = formData.get('description')
-        let personnel = formData.get('personnel')
-        let picture = formData.get('picture')
-
-        if(!name || !artist || !date || !tracks || !genre || !tracklist || !description || !personnel || !picture){
+        
+        if(Object.values(albumData).some(x => x === '')){
 
             window.scrollTo(1,0);
 
@@ -68,18 +59,7 @@ function Add(){
     
         let formValue = e.target.value;
         let formName = e.target.name
-
-     
-        if(formValue.length <= 0){
-
-            setFormErrors(formErrors => ({...formErrors, [formName]: `${formName} cannot be blank`}))
-
-        }
-        else{
-
-            setFormErrors(formErrors => ({...formErrors, [formName]: null}))
-
-        }
+        errorHelper.formAlbumChecker(formValue,formName,setFormErrors);
 
     }
 

@@ -18,6 +18,7 @@ function firstNameChecker(firstNameArray,errorState){
     }
 
 }
+
 function lastNameChecker(lastNameArray,errorState){
 
     if(lastNameArray.length <= 0){
@@ -38,6 +39,7 @@ function lastNameChecker(lastNameArray,errorState){
     }
 
 }
+
 function emailChecker(emailArray,errorState){
 
     let emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g
@@ -64,6 +66,7 @@ function emailChecker(emailArray,errorState){
     }
 
 }
+
 function passwordChecker(passwordArray,errorState){
 
     if(passwordArray.length <= 0){
@@ -82,8 +85,8 @@ function passwordChecker(passwordArray,errorState){
 
     }
 
-
 }
+
 function repeatPasswordChecker(repeatPasswordArray,errorState,ogPassword){
 
 
@@ -98,6 +101,20 @@ function repeatPasswordChecker(repeatPasswordArray,errorState,ogPassword){
 
     }
 
+}
+
+function formAlbumChecker(albumDataArray,formName,errorState){
+
+    if(albumDataArray.length <= 0){
+
+        errorState(formErrors => ({...formErrors, [formName]: `${formName} cannot be blank`}))
+
+    }
+    else{
+
+        errorState(formErrors => ({...formErrors, [formName]: null}))
+
+    }
 
 }
 
@@ -108,6 +125,7 @@ const errorHelper ={
     emailChecker,
     passwordChecker,
     repeatPasswordChecker,
+    formAlbumChecker,
 
 
 }
