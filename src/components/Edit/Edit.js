@@ -4,6 +4,7 @@ import { useParams,useNavigate } from 'react-router-dom';
 import styles from './Edit.module.css'
 import albumService from '../../services/albumService.js'
 import useAlbumState from '../../hooks/useAlbumState.js';
+import errorHelper from '../../helpers/errorHelper.js';
 import { routeGuardEdit } from '../../HOCs/routeGuard.js'
 
 
@@ -17,18 +18,15 @@ function Edit(){
     function albumEditSubmitHandler(e){
         
         e.preventDefault();
-
-        if(Object.values(formErrors).some(x => x !== null)){
-
-            let invalidFiled = Object.entries(formErrors).filter(x => x[1] !== null)[0]
-            let invalidEl = document.getElementsByName(invalidFiled[0])[0]
-
-            return invalidEl.scrollIntoView(invalidEl)
-
-        }
-    
         let albumData = Object.fromEntries(new FormData(e.currentTarget))
 
+        if(Object.values(formErrors).some(x => x !== null)){
+            
+            errorHelper.addAlbumErrorScroller(formErrors);
+            return;
+            
+        }
+    
         albumService.update(albumId,albumData)
         .then(() =>{
 
@@ -38,24 +36,11 @@ function Edit(){
         
     }
 
-
-
     function formErrorHanlder(e){
     
         let formValue = e.target.value;
         let formName = e.target.name
-
-     
-        if(formValue.length <= 0){
-
-            setFormErrors(formErrors => ({...formErrors, [formName]: `${formName} cannot be blank`}))
-
-        }
-        else{
-
-            setFormErrors(formErrors => ({...formErrors, [formName]: null}))
-
-        }
+        errorHelper.formAlbumChecker(formValue,formName,setFormErrors);
 
     }
 
