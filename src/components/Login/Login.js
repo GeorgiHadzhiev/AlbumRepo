@@ -9,7 +9,7 @@ import authService from '../../services/authService.js'
 export default function Login(){
 
     const {login} = useContext(AuthContext);
-    const [formErrors,setFormErrors] = useState({email: null,password: null});
+    const [formErrors,setFormErrors] = useState({wrongDetails: null});
     let closeRef = useRef(null);
     const navigate = useNavigate();
 
@@ -26,6 +26,7 @@ export default function Login(){
         .then(res => {
 
             login(res);
+            setFormErrors(formErrors => ({...formErrors, wrongDetails: null}))
             closeRef.current.click()
     
         })
@@ -77,9 +78,9 @@ export default function Login(){
             <div className="col-sm-12">
                 <button className="registerLinkButton" data-bs-dismiss="offcanvas" aria-label="Close" onClick={onClickHandler}>Don't Have an account?<br/>Click here to register!</button>
             </div>
-            <div className="col-sm-12 loginDetailsErrorMessage" >
-                <div className="alert alert-danger " role="alert">{formErrors.wrongDetails}</div>
-            </div>
+            {formErrors.wrongDetails && <div className="col-sm-12 loginDetailsErrorMessage" >
+                <div className="loginErrorMessage" role="alert">{formErrors.wrongDetails}</div>
+            </div>}
 
       </div>
 
