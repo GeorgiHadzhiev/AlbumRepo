@@ -1,0 +1,71 @@
+.addRow{
+    position: relative;
+    top: -44px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+
+}
+
+
+.addDescription{
+
+    border: #b1b0b0 solid 1px;
+    padding: 12px 19px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    color: #000;
+    width: 100%;
+    height: 237px;
+
+}
+.addTracklistContainer{
+
+    flex: 0 0 100%;
+    max-width: 100%;
+
+}
+.addTracklist{
+
+    height: 237px;
+    border: #b1b0b0 solid 1px;
+    padding: 12px 19px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    color: #000;
+    width: 100%;
+
+}
+
+.addError {
+
+    color: crimson;
+    position: relative;
+    top: -17px;
+
+}
+.blankFormAlertAdd{
+
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.3s ease-in-out;
+
+}
+.blankFormAlertAdd.fade{
+
+    opacity: 1;
+
+}
