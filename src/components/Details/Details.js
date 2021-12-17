@@ -1,10 +1,11 @@
-import { useParams,useNavigate,Link } from "react-router-dom"
+import { useParams,useNavigate,Link } from "react-router-dom";
 import { useContext } from "react";
 
-import {AuthContext} from '../../contexts/AuthContext.js'
-import albumService from '../../services/albumService.js'
+import {AuthContext} from '../../contexts/AuthContext.js';
+import albumService from '../../services/albumService.js';
 import useAlbumState from "../../hooks/useAlbumState.js";
-import DeletionDialog from '../Common/DeletionDialog'
+import DeletionDialog from '../Common/DeletionDialog';
+import styles from './Details.module.css';
 
 
 export default function Details(){
@@ -71,27 +72,8 @@ export default function Details(){
         <>
             <DeletionDialog className="deleteModal" onDelete={onDeleteHandler} />
             <section id="details-page" className="details">
-                <div className="album-information">
-                    <h3>Name: {album.name}</h3>
-                    <h4>Artist: {album.artist}</h4>
-                    <p className="year">Year: {album.date}</p>
-                    <p className="img"><img src={album.picture} alt="broken" /></p>
-                    <p className="numberOfSongs">Number of tracks: {album.tracks}</p>
-                    <p className="genre">Genre: {album.genre}</p>
-                    <div className="album-description">
-                        <h3>Description:</h3>
-                        <p>{album.description}</p>
-                    </div>
-                    <div className="tracklist">
-                        <h3>Tracklist:</h3>
-                        <p>{album.tracklist}</p>
-                    </div>
-                    <div className="personnel">
-                        <h3>Personnel:</h3>
-                        <p>{album.personnel}</p>
-                    </div>
-
-
+                <div className={styles.detailsContainer} >
+                    <p className={styles.image}><img src={album.picture} alt="broken" /></p>
                     <div className="actions">
 
                         {user._id && (user._id === album._ownerId
@@ -114,6 +96,29 @@ export default function Details(){
 
                         
                     </div>
+                    <div className={styles.basicInfo}>
+
+                        <h3 className={styles.name}>Name: {album.name}</h3>
+                        <h4 className={styles.artist}>Artist: {album.artist}</h4>
+                        <p className={styles.year}>Year: {album.date}</p>
+                        <p className={styles.tracks}>Number of tracks: {album.tracks}</p>
+                        <p className={styles.genre}>Genre: {album.genre}</p>
+
+                    </div>
+                    <div className={styles.description}>
+                        <h3>Description:</h3>
+                        <p>{album.description}</p>
+                    </div>
+                    <div className={styles.tracklist}>
+                        <h3>Tracklist:</h3>
+                        <p>{album.tracklist}</p>
+                    </div>
+                    <div className={styles.personnel}>
+                        <h3>Personnel:</h3>
+                        <p>{album.personnel}</p>
+                    </div>
+
+
                 </div>
             </section>
 
