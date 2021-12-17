@@ -9,7 +9,7 @@ export default function AlbumCard({album}){
         <Card className={styles.albumCard} >
             <Card.Img variant="top" src={album.picture} />
             <Card.Body>
-                <Card.Title>{album.name}</Card.Title>
+                <Card.Title className={styles.albumName}>{album.name}</Card.Title>
                 <Card.Title>Year: {album.date}</Card.Title>
                 <Card.Text>
                 <p>Likes: {album.likes.length} Disslikes: {album.dislikes.length}</p>
