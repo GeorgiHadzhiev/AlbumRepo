@@ -1,7 +1,9 @@
 import { useState,useEffect } from "react"
+import { motion } from 'framer-motion';
 
 import AlbumCard from "./AlbumCard"
 import albumService from "../../services/albumService.js"
+import {pageTransition} from '../../constants'
 import styles from './Catalog.module.css'
 
 export default function Catalog(){
@@ -27,28 +29,33 @@ export default function Catalog(){
 
     return(
 
-        <section id="catalogPage">
-            <h1>All Albums</h1>
-            <div>
+        <motion.div initial="out" animate="in" exit="out" variants={pageTransition}>
 
-                {albums.length > 0
-                
-                    ?(
-                        <ul className={styles.allAlbums}> 
+            <section id="catalogPage">
+                <h1>All Albums</h1>
+                <div>
 
-                            {albums.map(x => <AlbumCard key={x._id} album={x} />)}
+                    {albums.length > 0
+                    
+                        ?(
+                            <ul className={styles.allAlbums}> 
 
-                        </ul>
-                    )
-                    : <p className="no-albums">Sorry, no albums found ☹️</p>
-                
-                }
+                                {albums.map(x => <AlbumCard key={x._id} album={x} />)}
 
-            </div>
+                            </ul>
+                        )
+                        : <p className="no-albums">Sorry, no albums found ☹️</p>
+                    
+                    }
+
+                </div>
 
 
-        
-        </section>
+            
+            </section>
+
+        </motion.div>
+
     )
 
 
