@@ -2,6 +2,7 @@ import { useState,useEffect } from "react"
 
 import AlbumCard from "./AlbumCard"
 import albumService from "../../services/albumService.js"
+import styles from './Catalog.module.css'
 
 export default function Catalog(){
 
@@ -26,20 +27,24 @@ export default function Catalog(){
 
     return(
 
-        <section id="catalog-page">
+        <section id="catalogPage">
             <h1>All Albums</h1>
-            {albums.length > 0
-            
-                ?(
-                    <ul>
+            <div>
 
-                        {albums.map(x => <AlbumCard key={x._id} album={x} />)}
+                {albums.length > 0
+                
+                    ?(
+                        <ul className={styles.allAlbums}> 
 
-                    </ul>
-                )
-                : <p className="no-albums">Sorry, no albums found ☹️</p>
-            
-            }
+                            {albums.map(x => <AlbumCard key={x._id} album={x} />)}
+
+                        </ul>
+                    )
+                    : <p className="no-albums">Sorry, no albums found ☹️</p>
+                
+                }
+
+            </div>
 
 
         

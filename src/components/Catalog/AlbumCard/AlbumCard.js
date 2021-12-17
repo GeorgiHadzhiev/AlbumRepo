@@ -1,11 +1,12 @@
 import { Card,Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import styles from './AlbumCard.module.css'
 
 export default function AlbumCard({album}){
 
     return(
         
-        <Card style={{ width: '18rem' }}>
+        <Card className={styles.albumCard} style={{width: '18rem'}}>
             <Card.Img variant="top" src={album.picture} />
             <Card.Body>
                 <Card.Title>Name: {album.name}</Card.Title>
