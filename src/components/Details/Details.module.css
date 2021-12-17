@@ -26,3 +26,26 @@
     bottom: 130px;
 
 }
+
+.actions{
+
+    position: relative;
+    left: 49px;
+
+}
+.like{
+
+    margin: 0.2%;
+    color: black;
+    border-radius: 20px;
+    background-color: white;
+
+}
+.dislike{
+
+    margin: 0.2%;
+    color: black;
+    border-radius: 20px;
+    background-color: white;
+
+}

@@ -74,7 +74,7 @@ export default function Details(){
             <section id="details-page" className="details">
                 <div className={styles.detailsContainer} >
                     <p className={styles.image}><img src={album.picture} alt="broken" /></p>
-                    <div className="actions">
+                    <div className={styles.actions}>
 
                         {user._id && (user._id === album._ownerId
                         
@@ -87,8 +87,8 @@ export default function Details(){
                             )
                             :(
                                 <>
-                                    <button onClick={likeButtonClick}>Like</button>
-                                    <button onClick={dislikeBUttonClick}>Disslike</button>
+                                    <button className={styles.like} onClick={likeButtonClick}>Like</button>
+                                    <button className={styles.dislike} onClick={dislikeBUttonClick}>Disslike</button>
                                 </>
                             )
 
