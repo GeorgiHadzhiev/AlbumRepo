@@ -17,3 +17,11 @@ Once loged in, click on your Avatar and select "Add an Album" to ...add an album
 You can Edit or Delete your added albums. You can't do that for other people's. 
 
 Once you've had enough, click your Avatar and select "Logout". 
+
+### Test accounts
+
+username: vaseto@abv.bg
+password: 123456
+
+username: vlado@abv.bg
+password: 123456
