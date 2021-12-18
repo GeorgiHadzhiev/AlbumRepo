@@ -1,11 +1,13 @@
 import { useParams,useNavigate,Link } from "react-router-dom";
 import { useContext } from "react";
 import {Button} from 'react-bootstrap'
+import { motion } from 'framer-motion';
 
 import {AuthContext} from '../../contexts/AuthContext.js';
 import albumService from '../../services/albumService.js';
 import useAlbumState from "../../hooks/useAlbumState.js";
 import DeletionDialog from '../Common/DeletionDialog';
+import {pageTransition} from '../../constants'
 import styles from './Details.module.css';
 
 
@@ -69,7 +71,7 @@ export default function Details(){
 
     return(
 
-        <>
+        <motion.div initial="out" animate="in" exit="out" variants={pageTransition} >
             <DeletionDialog className="deleteModal" onDelete={onDeleteHandler} />
             <section id="details-page" className={styles.detailsPage}>
                 <div className={styles.detailsContainer} >
@@ -122,7 +124,7 @@ export default function Details(){
                 </div>
             </section>
 
-        </>
+        </motion.div>
 
 
     )
