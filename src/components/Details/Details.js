@@ -1,5 +1,5 @@
 import { useParams,useNavigate,Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext,useEffect } from "react";
 import {Button} from 'react-bootstrap'
 
 import {AuthContext} from '../../contexts/AuthContext.js';
@@ -36,20 +36,8 @@ export default function Details(){
         let likedUser = user._id
         
         albumService.like(album._id,{likedUser})
-        .then(() =>{
+        .then((res) =>{
             
-            
-            if(!album.likes.includes(likedUser)){
-                
-                e.target.classList.add('active')
-
-            }
-            else{
-
-                e.target.classList.remove('active')
-
-            }
-
             return;
             
         })
@@ -62,7 +50,6 @@ export default function Details(){
     }
     
     function dislikeBUttonClick(e){
-        
         
         let dislikedUser = user._id
 
@@ -100,8 +87,8 @@ export default function Details(){
                             )
                             :(
                                 <>
-                                    <Button className={styles.like} onClick={likeButtonClick} variant="primary">Like</Button>
-                                    <Button className={styles.dislike} onClick={dislikeBUttonClick} variant="danger">Dislike</Button>
+                                    <Button active={album.likes?.includes(user._id)} className={styles.like} onClick={likeButtonClick} variant="primary">Like</Button>
+                                    <Button active={album.dislikes?.includes(user._id)} className={styles.dislike} onClick={dislikeBUttonClick} variant="danger">Dislike</Button>
                                 </>
                             )
 

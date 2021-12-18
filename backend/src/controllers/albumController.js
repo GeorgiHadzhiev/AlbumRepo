@@ -68,7 +68,7 @@ router.patch('/like/:albumId', async (req, res) => {
         album.likes = album.likes.filter(x => x !== body[0] )
         await album.save()
 
-        return res.json({ok: true})
+        return res.json(album.likes)
 
     }
 
@@ -77,7 +77,7 @@ router.patch('/like/:albumId', async (req, res) => {
     album.likes.unshift(body[0])
     await album.save()
 
-    res.json({ok: true});
+    res.json(album.likes);
 
 
 })
