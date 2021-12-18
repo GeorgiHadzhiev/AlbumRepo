@@ -80,8 +80,8 @@ export default function Details(){
                         
                             ?(
                                 <>
-                                    <Link className="button" to={`/edit/${albumId}`}>Edit</Link>
-                                    <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Delete</button>
+                                    <Button className={styles.edit} as={Link} to={`/edit/${albumId}`} variant="success">Edit</Button>
+                                    <Button className={styles.delete}  data-bs-toggle="modal" data-bs-target="#exampleModal" variant="danger">Delete</Button>
                                 </>
 
                             )

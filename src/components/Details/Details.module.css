@@ -70,3 +70,24 @@
     background-color: white;
 
 }
+
+.edit{
+
+    margin: 0.2%;
+    color: black;
+    border-radius: 20px;
+    background-color: white
+
+
+}
+
+.delete{
+
+
+    margin: 0.2%;
+    color: black;
+    border-radius: 20px;
+    background-color: white;
+
+
+}
