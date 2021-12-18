@@ -71,7 +71,7 @@ export default function Details(){
 
         <>
             <DeletionDialog className="deleteModal" onDelete={onDeleteHandler} />
-            <section id="details-page" className="details">
+            <section id="details-page" className={styles.detailsPage}>
                 <div className={styles.detailsContainer} >
                     <p className={styles.image}><img src={album.picture} alt="broken" /></p>
                     <div className={styles.actions}>
