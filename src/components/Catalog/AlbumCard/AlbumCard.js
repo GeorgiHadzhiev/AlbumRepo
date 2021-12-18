@@ -12,7 +12,7 @@ export default function AlbumCard({album}){
                 <Card.Title className={styles.albumName}>{album.name}</Card.Title>
                 <Card.Title>Year: {album.date}</Card.Title>
                 <Card.Text>
-                <p>Likes: {album.likes.length} Disslikes: {album.dislikes.length}</p>
+                <span>{album.likes.length} Likes {album.dislikes.length} Disslikes</span>
                 </Card.Text>
                 <Button className={styles.detailsButton} as={Link} to={`/details/${album._id}`} variant="primary">Details</Button>
             </Card.Body>

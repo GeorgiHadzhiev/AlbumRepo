@@ -4,6 +4,7 @@ import { routeGuardIfNotUser } from '../../HOCs/routeGuard.js'
 import albumService from '../../services/albumService.js';
 import { AuthContext } from '../../contexts/AuthContext.js';
 import AlbumCard from '../Catalog/AlbumCard'
+import styles from './MyAlbum.module.css'
 
 function MyAlbums(){
 
@@ -35,7 +36,7 @@ function MyAlbums(){
             {albums.length > 0
             
                 ?(
-                    <ul>
+                    <ul className={styles.myAlbums}>
 
                         {albums.map(x => <AlbumCard key={x._id} album={x} />)}
 
