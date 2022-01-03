@@ -13,8 +13,6 @@ export default function ErrorPage(){
                 <Card.Title className={styles.text}>OOPS</Card.Title>
                 <Card.Text className={styles.text}>
                 It seems you're in the wrong place
-
-                dasdawdasd
                 </Card.Text>
                 <Card.Text className={styles.text}>We can't find anything here...</Card.Text>
             </Card.ImgOverlay>
