@@ -31,15 +31,15 @@ function App() {
         <AnimatePresence>
 
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/catalog" element={<Catalog />} />
-                <Route path="/MyAlbums" element={<MyAlbums />} />
-                <Route path="/add" element={<Add />} />
-                <Route path="/details/:albumId" element={<Details />} />
-                <Route path="/edit/:albumId" element={<Edit />} />
-                <Route path="/logout" element={<Logout />} />
-                <Route path="*" element={<ErrorPage />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/catalog" element={<Catalog />} />
+              <Route path="/MyAlbums" element={<MyAlbums />} />
+              <Route path="/add" element={<Add />} />
+              <Route path="/details/:albumId" element={<Details />} />
+              <Route path="/edit/:albumId" element={<Edit />} />
+              <Route path="/logout" element={<Logout />} />
+              <Route path="*" element={<ErrorPage />} />
 
     
             </Routes>
