@@ -100,7 +100,7 @@ router.patch('/dislike/:albumId', async (req, res) => {
 
         return res.json({ok: true})
  
-     }
+    }
 
 
     album.dislikes.unshift(body[0])
