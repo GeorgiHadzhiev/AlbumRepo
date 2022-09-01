@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react"
+import { useState } from "react"
 import { motion } from 'framer-motion';
 
 import AlbumCard from "./AlbumCard"
@@ -10,22 +10,18 @@ export default function Catalog(){
 
     const [albums,setAlbums] = useState([]);
 
-    useEffect(() => {
+    albumService.getAll()
+    .then(res => {
 
-        albumService.getAll()
-        .then(res => {
+        setAlbums(res)
 
-            setAlbums(res)
+    })
+    .catch(err =>{
 
-        })
-        .catch(err =>{
+        console.log(err)
 
-            console.log(err)
+    })
 
-        })
-
-
-    },[])
 
     return(
 
